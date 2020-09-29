@@ -1,11 +1,11 @@
 <template>
   <v-container>
-    <v-toolbar dark prominent>
+    <v-toolbar prominent flat>
       <v-toolbar-title>Book4Book</v-toolbar-title>
 
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-toolbar>
+    <v-toolbar flat>
       <v-spacer></v-spacer>
 
       <v-toolbar-items>
