@@ -1,34 +1,98 @@
 <template>
-  <v-container>
-    <div class="descriptionCard">
-      <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="700">
-        <p class="text-center">
-          Book4Book is a book exchange platform created by enthusiastic readers,
-          tech geeks and nature lovers from Greece subsequently spread over the
-          world. The World Summit Award 2013 paved the part for creating the Sri
-          Lankan Chapter of Book4Book. Through this platform we aim to support
-          the enthusiast readers via technology, within a citizen’s community
-          acting without the mediation of third parties. The site is open to
-          those who want to share or request books, and also encourages users to
-          organize events for mass book exchange.
-        </p>
+  <div class="block latestPostBlock">
+    <v-container>
+      <h2 class="text-center">Featured</h2>
+      <v-row>
+        <v-col cols="4" v-for="item in items" :key="item.id">
+          <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+            <template slot="progress">
+              <v-progress-linear
+                color="deep-purple"
+                height="10"
+                indeterminate
+              ></v-progress-linear>
+            </template>
 
-        <v-card-actions>
-          <div class="text-center">
-            <v-btn rounded color="#26c6da" dark elevation="24" block>
-              Explore Our Categories
-            </v-btn>
-          </div>
-        </v-card-actions>
-      </v-card>
-    </div>
-  </v-container>
+            <v-img
+              height="250"
+              :src="item.src"
+            ></v-img>
+
+            <v-card-title>{{item.title}}</v-card-title>
+
+            <v-card-text>
+              <v-row align="center" class="mx-0">
+                <v-rating
+                  :value="item.value"
+                  color="amber"
+                  dense
+                  half-increments
+                  readonly
+                  size="14"
+                ></v-rating>
+
+                <div class="grey--text ml-4">
+                  {{item.ratings}}
+                </div>
+              </v-row>
+
+              <div class="my-4 subtitle-1">
+                {{item.subtitle}}
+              </div>
+
+              <div>
+                {{ item.description }}
+              </div>
+            </v-card-text>
+
+            <v-divider class="mx-4"></v-divider>
+
+            <v-card-actions>
+              <v-btn color="deep-purple lighten-2" text @click="reserve">
+                Reserve
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Description",
+  name: "Featured",
 
-  data: () => ({}),
+  data: () => ({
+        items: [
+      {
+        id: 1,
+        title: "Village By The Sea",
+        subtitle: "Anita Desai",
+        description: "The novel follows the life of a small family forced to live in poverty. The parents are unable to take care of their four children—the mother is sick ...",
+        src: require("../assets/images/10.jpg"),
+        ratings: "4.5 (413)",
+        value: "4.5"
+      },
+      {
+        id: 2,
+        title: "Hamlet",
+        subtitle: "William Shakespeare",
+        description: "Hamlet is a story of how the ghost of a murdered king comes to haunt the living with tragic consequences. A vengeful ghost and a brother's murder...",
+        src: require("../assets/images/11.jpg"),
+        ratings: "4.0 (369)",
+        value: "4.0"
+      },
+      {
+        id: 3,
+        title: "The Lord Of The Rings",
+        subtitle: "J R R Tolkien",
+        description: "The Lord of the Rings is an epic high fantasy novel by the English author and scholar J. R. R. Tolkien. Set in Middle-earth, the world at some distant time...",
+        src: require("../assets/images/12.jpg"),
+        ratings: "4.0 (502)",
+        value: "4.0"
+      }
+    ]
+  }),
 };
 </script>
