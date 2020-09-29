@@ -1,5 +1,4 @@
 // hero block
-
 .heroBlock {
   padding-top: 85px;
   position: relative;
@@ -38,4 +37,25 @@
   .v-card__title {
     background: rgba(0,0,0,0.3);
   }
+}
+
+//Description on home
+
+.descriptionCard{
+
+  padding-top: 50px;
+
+}
+
+.mx-auto{
+
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+
+}
+
+.text-center{
+  margin: auto;
 }
