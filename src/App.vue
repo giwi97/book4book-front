@@ -6,6 +6,7 @@
     <v-content>
       <Hero />
       <Description />
+      <Featured />
     </v-content>
   </v-app>
 </template>
@@ -14,6 +15,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Description from "./components/Description";
+import Featured from "./components/Featured";
 
 export default {
   name: "App",
@@ -21,7 +23,8 @@ export default {
   components: {
     Header,
     Hero,
-    Description
+    Description,
+    Featured
   },
 
   data: () => ({
