@@ -14,8 +14,9 @@
 
 <script>
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import HeaderS from "./components/HeaderS";
+import Footer from "./components/Footer";
+
 
 export default {
   name: "App",
