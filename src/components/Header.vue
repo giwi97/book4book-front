@@ -17,35 +17,35 @@
 
       <v-toolbar-items>
         <v-btn text>
-          Home
+          <router-link to="/">Home</router-link>
         </v-btn>
 
         <v-btn text>
-          Book Request
+          <router-link to="/bookrequest">Book Request</router-link>
         </v-btn>
 
         <v-btn text>
-          Book Offers
+          <router-link to="/bookoffers">Book Offers</router-link>
         </v-btn>
 
         <v-btn text>
-          Events
+          <router-link to="/events">Events</router-link>
         </v-btn>
 
         <v-btn text>
-          Members
+          <router-link to="/members">Members</router-link>
         </v-btn>
 
         <v-btn text>
-          Groups
+          <router-link to="/groups">Groups</router-link>
         </v-btn>
 
         <v-btn text>
-          How it works
+          <router-link to="/howitworks">How it works</router-link>
         </v-btn>
 
         <v-btn text>
-          About Us
+          <router-link to="/aboutus">About Us</router-link>
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
