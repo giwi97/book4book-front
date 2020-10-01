@@ -3,6 +3,7 @@
     <v-app-bar color="white" flat>
       <Header />
     </v-app-bar>
+    <HeaderS />
     <router-view> </router-view>
 
     <v-footer>
@@ -14,6 +15,7 @@
 <script>
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import HeaderS from "./components/HeaderS";
 
 export default {
   name: "App",
@@ -21,6 +23,7 @@ export default {
   components: {
     Header,
     Footer,
+    HeaderS,
   },
 
   data: () => ({

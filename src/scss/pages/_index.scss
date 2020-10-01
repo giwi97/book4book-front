@@ -1,7 +1,8 @@
 // hero block
 .heroBlock {
-  padding-top: 85px;
+  
   position: relative;
+
 
   .v-window {
     @media only screen and (max-width: 599px) {
@@ -58,4 +59,16 @@
 
 .text-center{
   margin: auto;
+}
+
+
+//HeaderS
+.headers{
+  padding-top: 20px;
+}
+
+//search
+.searchbar{
+  position: sticky;
+
 }
