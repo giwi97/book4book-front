@@ -1,35 +1,42 @@
 <template>
   <v-container>
-    <v-footer dark padless>
-      <v-card flat tile class="indigo lighten-1 white--text text-center">
+    <v-footer padless>
+      <v-card flat tile class="text-center">
+        <div class="text-center">
+          <v-btn class="ma-2" outlined rounded color="#26c6da">
+            Contact Us
+          </v-btn>
+          <v-btn class="ma-2" outlined rounded color="#26c6da">
+            Feedback
+          </v-btn>
+          <v-btn class="ma-2" outlined rounded color="#26c6da">
+            FAQ
+          </v-btn>
+        </div>
+
         <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4 white--text"
-            icon
-          >
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
             <v-icon size="24px">
               {{ icon }}
             </v-icon>
           </v-btn>
         </v-card-text>
 
-        <v-card-text class="white--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
-          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-          lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
-          iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum
-          tempor vel ut orci. Orci varius natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus.
+        <v-card-text class="pt-0">
+          Book4Book is a book exchange platform created by enthusiastic readers,
+          tech geeks and nature lovers from Greece subsequently spread over the
+          world. The World Summit Award 2013 paved the part for creating the Sri
+          Lankan Chapter of Book4Book. Through this platform we aim to support
+          the enthusiast readers via technology, within a citizen’s community
+          acting without the mediation of third parties. The site is open to
+          those who want to share or request books, and also encourages users to
+          organize events for mass book exchange.
         </v-card-text>
 
         <v-divider></v-divider>
 
-        <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>book4book.lk</strong>
+        <v-card-text>
+          {{ new Date().getFullYear() }} — <strong> © book4book.lk</strong>
         </v-card-text>
       </v-card>
     </v-footer>
@@ -41,7 +48,7 @@ export default {
   name: "Footer",
 
   data: () => ({
-    items: [],
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
   }),
 };
 </script>
