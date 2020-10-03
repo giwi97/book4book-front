@@ -4,6 +4,7 @@
       <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="700">
         <validation-observer ref="observer" v-slot="">
           <form>
+              
             <validation-provider
               v-slot="{ errors }"
               name="Name"
