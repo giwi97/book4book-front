@@ -1,10 +1,20 @@
 <template>
-  <v-content>Book Requests</v-content>
+  <v-content>
+    <BookReqForm />
+  </v-content>
 </template>
 
 <script>
+import BookReqForm from '../components/BookReqForm'
+
 export default {
   name: "BookRequest",
+
+  components: {
+
+    BookReqForm,
+
+  },
 
   data() {
     return {
