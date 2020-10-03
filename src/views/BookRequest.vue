@@ -1,5 +1,5 @@
 <template>
-  <v-content>Book Request</v-content>
+  <v-content>Book Requests</v-content>
 </template>
 
 <script>
