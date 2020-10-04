@@ -1,18 +1,17 @@
 <template>
   <v-container>
     <div class="descriptionCard">
-      <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="700">
+      <v-card class="mx-auto rounded-xl" color="#616161" dark max-width="700">
         <validation-observer ref="observer" v-slot="">
           <form>
-              
             <validation-provider
               v-slot="{ errors }"
               name="Name"
-              rules="required|max:10"
+              rules="required|max:100"
             >
               <v-text-field
                 v-model="name"
-                :counter="10"
+                :counter="100"
                 :error-messages="errors"
                 label="Name"
                 required
@@ -32,17 +31,27 @@
             </validation-provider>
             <validation-provider
               v-slot="{ errors }"
-              name="select"
+              name="address"
               rules="required"
             >
-              <v-select
-                v-model="select"
-                :items="items"
+              <v-text-field
+                v-model="address"
                 :error-messages="errors"
-                label="Select"
-                data-vv-name="select"
+                label="Your Address"
                 required
-              ></v-select>
+              ></v-text-field>
+            </validation-provider>
+            <validation-provider
+              v-slot="{ errors }"
+              name="book"
+              rules="required"
+            >
+              <v-text-field
+                v-model="book"
+                :error-messages="errors"
+                label="Book name"
+                required
+              ></v-text-field>
             </validation-provider>
             <validation-provider v-slot="" rules="required" name="checkbox">
               <v-checkbox
@@ -105,9 +114,9 @@ export default {
   data: () => ({
     name: "",
     email: "",
-    select: null,
+    address: "",
+    book: "",
     errors: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
     checkbox: null,
   }),
 
@@ -118,7 +127,8 @@ export default {
     clear() {
       this.name = "";
       this.email = "";
-      this.select = null;
+      this.address = "";
+      this.book = "";
       this.checkbox = null;
       this.$refs.observer.reset();
     },
