@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="descriptionCard">
-      <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="700">
+      <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="700" style="background-image: linear-gradient(to right, #C04848, #480048);">
         <p class="text-center">
           Book4Book is a book exchange platform created by enthusiastic readers,
           tech geeks and nature lovers from Greece subsequently spread over the
@@ -15,7 +15,7 @@
 
         <v-card-actions>
           <div class="text-center">
-            <v-btn rounded color="#26c6da" dark elevation="24" block>
+            <v-btn rounded color="#FFB300" dark elevation="24" block>
               Explore Our Categories
             </v-btn>
           </div>
