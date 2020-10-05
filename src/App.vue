@@ -1,9 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar color="white" flat>
+    <v-app-bar color="#E53935" flat>
       <Header />
     </v-app-bar>
+
     <HeaderS />
+
     <router-view> </router-view>
 
     <v-footer>
@@ -16,7 +18,6 @@
 import Header from "./components/Header";
 import HeaderS from "./components/HeaderS";
 import Footer from "./components/Footer";
-
 
 export default {
   name: "App",
