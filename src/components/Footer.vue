@@ -7,7 +7,7 @@
             Contact Us
           </v-btn>
           <v-btn class="ma-2" outlined rounded color="#26c6da">
-            Feedback
+          <router-link to="/feedback">Feedback</router-link>  
           </v-btn>
           <v-btn class="ma-2" outlined rounded color="#26c6da">
             FAQ
