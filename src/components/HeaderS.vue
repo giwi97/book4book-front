@@ -28,7 +28,7 @@
           </v-btn>
 
           <v-btn href="/howitworks">
-            How it works>
+            How it works
           </v-btn>
 
           <v-btn href="/aboutus">
