@@ -1,51 +1,42 @@
 <template>
   <v-container>
-    <div class="headers">
-      <div class="text-right">
-        <v-toolbar flat floating>
-          <v-text-field
-            hide-details
-            single-line
-            append-icon="mdi-magnify"
-          ></v-text-field>
-        </v-toolbar>
-      </div>
-      <v-toolbar flat>
-        <v-spacer></v-spacer>
+    <v-row>
+      <v-col cols="12" class="py-2">
+        <v-btn-toggle v-model="text" tile color="deep-purple accent-3" group>
+          <v-btn href="/">
+            Home
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/">Home</router-link>
-        </v-btn>
+          <v-btn href="/bookrequest">
+            Book Request
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/bookrequest">Book Request</router-link>
-        </v-btn>
+          <v-btn href="/bookoffers">
+            Book Offers
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/bookoffers">Book Offers</router-link>
-        </v-btn>
+          <v-btn href="/events">
+            Events
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/events">Events</router-link>
-        </v-btn>
+          <v-btn href="/members">
+            Members
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/members">Members</router-link>
-        </v-btn>
+          <v-btn href="/groups">
+            Groups
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/groups">Groups</router-link>
-        </v-btn>
+          <v-btn href="/howitworks">
+            How it works>
+          </v-btn>
 
-        <v-btn text>
-          <router-link to="/howitworks">How it works</router-link>
-        </v-btn>
-
-        <v-btn text>
-          <router-link to="/aboutus">About Us</router-link>
-        </v-btn>
-      </v-toolbar>
-    </div>
+          <v-btn href="/aboutus">
+            About Us
+          </v-btn>
+        </v-btn-toggle>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

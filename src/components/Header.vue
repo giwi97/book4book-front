@@ -3,9 +3,11 @@
     <v-toolbar flat>
       <v-toolbar-title>Book4Book</v-toolbar-title>
       <v-spacer></v-spacer>
-      <div class="text-right" style="padding-top:10px;">
+      <div class="text-right" style="padding-top:25px;">
         <v-toolbar flat floating>
           <v-text-field
+            hide-details
+            single-line
             label="Search"
             filled
             rounded
