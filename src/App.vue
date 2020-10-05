@@ -8,7 +8,7 @@
 
     <router-view> </router-view>
 
-    <v-footer>
+    <v-footer style="background-image: linear-gradient(to right, #C04848, #480048);">
       <Footer />
     </v-footer>
   </v-app>

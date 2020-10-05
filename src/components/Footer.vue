@@ -1,15 +1,15 @@
 <template>
-  <v-container>
+  <v-container style="background-image: linear-gradient(to right, #C04848, #480048);">
     <v-footer padless>
-      <v-card flat tile class="text-center">
+      <v-card flat tile class="text-center" style="background-image: linear-gradient(to right, #C04848, #480048);">
         <div class="text-center">
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
+          <v-btn class="ma-2" outlined rounded color="#FFB300">
             Contact Us
           </v-btn>
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
+          <v-btn class="ma-2" outlined rounded color="#FFB300">
             Feedback
           </v-btn>
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
+          <v-btn class="ma-2" outlined rounded color="#FFB300">
             FAQ
           </v-btn>
         </div>
