@@ -1,5 +1,5 @@
 <template>
-  <div class="navi-bar" style="background-image: linear-gradient(to right, #E53935, #E53935);">
+  <div class="navi-bar" style="background-image: linear-gradient(to right, #C04848, #480048);">
     <v-container>
       <v-row >
         <v-col cols="12" class="py-2">

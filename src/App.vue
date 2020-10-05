@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="#E53935" flat>
+    <v-app-bar style="background-image: linear-gradient(to right, #C04848, #480048);" flat>
       <Header />
     </v-app-bar>
 
