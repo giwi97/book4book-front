@@ -1,10 +1,11 @@
 <template>
+
   <v-container>
-    <v-toolbar flat>
+    <v-toolbar flat style="background-image: linear-gradient(to right, #E53935, #E53935);">
       <v-toolbar-title>Book4Book</v-toolbar-title>
       <v-spacer></v-spacer>
-      <div class="text-right" style="padding-top:25px;">
-        <v-toolbar flat floating>
+      <div class="text-right" style="margin-top:25px;background-image: linear-gradient(to right, #E53935, #E53935);">
+        <v-toolbar flat floating  style="background-image: linear-gradient(to right, #E53935, #E53935);">
           <v-text-field
             hide-details
             single-line
@@ -16,16 +17,17 @@
           ></v-text-field>
         </v-toolbar>
       </div>
-      <div class="text-center" style="padding-top:10px;">
-        <v-btn class="ma-2" rounded color="#26c6da" to="/signup">
+      <div class="text-center" style="margin-top:10px;">
+        <v-btn class="ma-2" rounded color="#FFB300" to="/signup">
           Sign-up
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#26c6da" to="/login">
+        <v-btn class="ma-2" outlined rounded color="#FFB300" to="/login">
           Login
         </v-btn>
       </div>
     </v-toolbar>
   </v-container>
+  
 </template>
 
 <script>
