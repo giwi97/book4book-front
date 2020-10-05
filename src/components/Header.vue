@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-toolbar prominent flat>
+    <v-toolbar prominent flat color="grey">
       <v-toolbar-title>Book4Book</v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="text-center" style="padding-top:70px;">
