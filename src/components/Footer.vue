@@ -1,7 +1,14 @@
 <template>
-  <v-container style="background-image: linear-gradient(to right, #C04848, #480048);">
+  <v-container
+    style="background-image: linear-gradient(to right, #C04848, #480048);"
+  >
     <v-footer padless>
-      <v-card flat tile class="text-center" style="background-image: linear-gradient(to right, #C04848, #480048);">
+      <v-card
+        flat
+        tile
+        class="text-center"
+        style="background-image: linear-gradient(to right, #C04848, #480048);"
+      >
         <div class="text-center">
           <v-btn class="ma-2" outlined rounded color="#FFB300">
             Contact Us

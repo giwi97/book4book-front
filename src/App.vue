@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar style="background-image: linear-gradient(to right, #C04848, #480048);" flat>
+    <v-app-bar
+      style="background-image: linear-gradient(to right, #C04848, #480048);"
+      flat
+    >
       <Header />
     </v-app-bar>
 
@@ -8,7 +11,9 @@
 
     <router-view> </router-view>
 
-    <v-footer style="background-image: linear-gradient(to right, #C04848, #480048);">
+    <v-footer
+      style="background-image: linear-gradient(to right, #C04848, #480048);"
+    >
       <Footer />
     </v-footer>
   </v-app>
