@@ -12,7 +12,7 @@
     <router-view> </router-view>
 
     <v-footer
-      style="background-image: linear-gradient(to right, #C04848, #480048);"
+      style="background-image: linear-gradient(to right, #C04848, #480048);width:100%;"
     >
       <Footer />
     </v-footer>
