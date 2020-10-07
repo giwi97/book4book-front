@@ -21,9 +21,11 @@
 
         <v-card-actions>
           <div class="text-center">
+            <router-link to="/BookCategory">
             <v-btn rounded color="#FFB300" dark elevation="24" block>
               Explore Our Categories
             </v-btn>
+            </router-link>
           </div>
         </v-card-actions>
       </v-card>
