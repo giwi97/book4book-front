@@ -1,12 +1,12 @@
 <template>
   <div style="width: 100%;">
-    <v-footer style="width: 100%;" padless>
-      <v-container>
+
+     
         <v-card
           flat
           tile
           class="text-center"
-          style="background-image: linear-gradient(to right, #C04848, #480048);"
+          style="background-image: linear-gradient(to right, #C04848, #480048);width:100%;"
         >
           <div class="text-center">
             <v-btn class="ma-2" outlined rounded color="#FFB300">
@@ -46,8 +46,8 @@
             {{ new Date().getFullYear() }} — <strong> © book4book.lk</strong>
           </v-card-text>
         </v-card>
-      </v-container>
-    </v-footer>
+     
+
   </div>
 </template>
 

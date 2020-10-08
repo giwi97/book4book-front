@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <div style="width:100%;">
     <v-toolbar
       flat
-      style="background-image: linear-gradient(to right, #b23f48, #550848);"
+      style="background-image: linear-gradient(to right, black, black);"
     >
       <v-img
         max-height="80"
@@ -12,12 +12,12 @@
       <v-spacer></v-spacer>
       <div
         class="text-right"
-        style="margin-top:25px;background-image: linear-gradient(to right, #802148, #681348);"
+        style="margin-top:25px;background-image: linear-gradient(to right, black, black);"
       >
         <v-toolbar
           flat
           floating
-          style="background-image: linear-gradient(to right, #802148, #681348);"
+          style="background-image: linear-gradient(to right, black, black);"
         >
           <v-text-field
             hide-details
@@ -39,7 +39,7 @@
         </v-btn>
       </div>
     </v-toolbar>
-  </v-container>
+  </div>
 </template>
 
 <script>
