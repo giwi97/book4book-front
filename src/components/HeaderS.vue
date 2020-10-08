@@ -1,52 +1,45 @@
 <template>
-  <v-container>
-    <div class="headers">
-      <div class="text-right">
-        <v-toolbar flat floating>
-          <v-text-field
-            hide-details
-            single-line
-            append-icon="mdi-magnify"
-          ></v-text-field>
-        </v-toolbar>
-      </div>
-      <v-toolbar flat>
-        <v-spacer></v-spacer>
+  <div class="navi-bar" style="background-image: linear-gradient(to right, #C04848, #480048);">
+    <v-container>
+      <v-row >
+        <v-col cols="12" class="py-2">
+          <v-btn-toggle v-model="text" tile color="white accent-3" group>
+            <v-btn to="/">
+              <span style="color:#FFB300;">Home</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/">Home</router-link>
-        </v-btn>
+            <v-btn to="/bookrequest">
+             <span style="color:#FFB300;"> Book Request</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/bookrequest">Book Request</router-link>
-        </v-btn>
+            <v-btn to="/bookoffers">
+              <span style="color:#FFB300;">Book Offers</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/bookoffers">Book Offers</router-link>
-        </v-btn>
+            <v-btn to="/events">
+             <span style="color:#FFB300;"> Events</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/events">Events</router-link>
-        </v-btn>
+            <v-btn to="/members">
+             <span style="color:#FFB300;"> Members</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/members">Members</router-link>
-        </v-btn>
+            <v-btn to="/groups">
+             <span style="color:#FFB300;"> Groups</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/groups">Groups</router-link>
-        </v-btn>
+            <v-btn to="/howitworks">
+              <span style="color:#FFB300;">How it works</span>
+            </v-btn>
 
-        <v-btn text>
-          <router-link to="/howitworks">How it works</router-link>
-        </v-btn>
-
-        <v-btn text>
-          <router-link to="/aboutus">About Us</router-link>
-        </v-btn>
-      </v-toolbar>
-    </div>
-  </v-container>
+            <v-btn to="/aboutus">
+             <span style="color:#FFB300;"> About Us</span>
+            </v-btn>
+          </v-btn-toggle>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
