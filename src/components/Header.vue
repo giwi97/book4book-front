@@ -1,11 +1,24 @@
 <template>
   <div style="width:100%;">
-    <v-card class="mx-auto overflow-visible" style="padding:0px;">
-      <v-app-bar color="white">
+    <v-card flat>
+      <v-app-bar flat color="white">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+        Menu
+
         <v-spacer></v-spacer>
-        <v-toolbar-title>Book4Book</v-toolbar-title>
+        <router-link to="/">
+        <v-toolbar-title dark>Book4Book</v-toolbar-title>
+        </router-link>
         <v-spacer></v-spacer>
+        <div>
+          <v-btn depressed x-large style="font-size: 10px;font-weight: bold;">
+            Register / Login
+          </v-btn>
+          <v-btn color="#26C6DA" dark x-large style="font-size: 10px;font-weight: bold;">
+            Explore <br />
+            Categories
+          </v-btn>
+        </div>
       </v-app-bar>
 
       <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -15,17 +28,45 @@
             active-class="deep-purple--text text--accent-4"
           >
             <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
+              <router-link to="/">
               <v-list-item-title>Home</v-list-item-title>
+              </router-link>
             </v-list-item>
 
             <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Account</v-list-item-title>
+              <router-link to="/bookrequest">
+              <v-list-item-title>Book Request</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+             <router-link to="/bookoffers">
+              <v-list-item-title>Book Offers</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/events">
+              <v-list-item-title>Events</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/members">
+              <v-list-item-title>Members</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/groups">
+              <v-list-item-title>Groups</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/howitworks">
+              <v-list-item-title>How it works</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/aboutus">
+              <v-list-item-title>About Us</v-list-item-title>
+              </router-link>
             </v-list-item>
           </v-list-item-group>
         </v-list>
