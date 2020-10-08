@@ -1,22 +1,17 @@
 <template>
   <v-app>
+    <Header />
 
-      <Header />
-
-
-    <HeaderS />
 
     <router-view> </router-view>
 
-
-      <Footer />
-
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Header from "./components/Header";
-import HeaderS from "./components/HeaderS";
+// import HeaderS from "./components/HeaderS";
 import Footer from "./components/Footer";
 
 export default {
@@ -25,7 +20,7 @@ export default {
   components: {
     Header,
     Footer,
-    HeaderS,
+    // HeaderS,
   },
 
   data: () => ({
