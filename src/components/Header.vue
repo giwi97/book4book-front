@@ -6,9 +6,7 @@
         Menu
 
         <v-spacer></v-spacer>
-        <router-link to="/">
-        <v-toolbar-title dark>Book4Book</v-toolbar-title>
-        </router-link>
+        <v-toolbar-title @click="$router.push('/')" style="cursor:pointer">Book4Book</v-toolbar-title>
         <v-spacer></v-spacer>
         <div>
           <v-btn depressed x-large style="font-size: 10px;font-weight: bold;">
