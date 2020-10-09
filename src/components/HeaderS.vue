@@ -1,7 +1,7 @@
 <template>
   <div
     class="navi-bar"
-    style="background-image: linear-gradient(to right, black, black);"
+    style="background-image: linear-gradient(to right, #FF512F, #DD2476);"
   >
     <v-container>
       <v-row>
