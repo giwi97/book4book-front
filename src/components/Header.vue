@@ -19,7 +19,7 @@
         </div>
       </v-app-bar>
 
-      <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-navigation-drawer v-model="drawer" absolute temporary height="800">
         <v-list nav>
           <v-list-item-group
             v-model="group"
@@ -77,6 +77,6 @@
 export default {
   name: "Header",
 
-  data: () => ({ drawer: false, group: null }),
+  data: () => ({ drawer: null, group: null }),
 };
 </script>
