@@ -1,19 +1,17 @@
 <template>
   <div style="width:100%;">
-    <v-card flat>
-      <v-app-bar flat color="white">
+    <v-card flat style="width:100%;">
+      <v-app-bar dark flat color="#212121">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-        Menu
-
+           Menu    
         <v-spacer></v-spacer>
         <v-toolbar-title @click="$router.push('/')" style="cursor:pointer">Book4Book</v-toolbar-title>
         <v-spacer></v-spacer>
         <div>
-          <v-btn depressed x-large style="font-size: 10px;font-weight: bold;">
+          <v-btn rounded outlined depressed  style="font-size: 10px;font-weight: bold;" to="/Login">
             Register / Login
           </v-btn>
-          <v-btn color="#26C6DA" dark x-large style="font-size: 10px;font-weight: bold;">
-            Explore <br />
+          <v-btn rounded outlined color="#26C6DA" dark style="font-size: 10px;font-weight: bold;margin-left:5px;" to="/BookCategory">
             Categories
           </v-btn>
         </div>

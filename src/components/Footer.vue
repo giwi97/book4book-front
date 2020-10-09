@@ -3,17 +3,18 @@
     <v-card
       flat
       tile
+      dark
       class="text-center"
-      style="background-image: linear-gradient(to right, white, white);width:100%;"
+      style="background-image: linear-gradient(to right, #212121, #212121);width:100%;"
     >
       <div class="text-center">
-        <v-btn class="ma-2" outlined rounded color="#FFB300">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA">
           Contact Us
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#FFB300">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA">
           Feedback
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#FFB300">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA">
           FAQ
         </v-btn>
       </div>
@@ -24,17 +25,6 @@
             {{ icon }}
           </v-icon>
         </v-btn>
-      </v-card-text>
-
-      <v-card-text class="pt-0">
-        Book4Book is a book exchange platform created by enthusiastic readers,
-        tech geeks and nature lovers from Greece subsequently spread over the
-        world. The World Summit Award 2013 paved the part for creating the Sri
-        Lankan Chapter of Book4Book. Through this platform we aim to support the
-        enthusiast readers via technology, within a citizen’s community acting
-        without the mediation of third parties. The site is open to those who
-        want to share or request books, and also encourages users to organize
-        events for mass book exchange.
       </v-card-text>
 
       <v-divider></v-divider>
