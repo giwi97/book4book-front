@@ -2,6 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
+import VueSession from "vue-session";
+Vue.use(VueSession)
 
 import Home from "./views/Home";
 import BookRequest from "./views/BookRequest";
