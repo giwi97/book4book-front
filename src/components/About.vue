@@ -1,9 +1,11 @@
-<template>
-  <div class="block latestPostBlock">
+<template >
+  <div
+    class="block latestPostBlock"
+  >
     <v-container>
       <h2 class="text-center">About Us</h2>
-      <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="1050">
-        <p class="text-center ma-6">
+      <v-card class="mx-auto rounded-xl" max-width="100%" :elevation="15">
+        <h5 class="text-center ma-6 blue--text font-bold">
           Book4Book is a book exchange platform created by enthusiastic readers,
           tech geeks and nature lovers from Greece subsequently spread over the
           world. The World Summit Award 2013 paved the part for creating the Sri
@@ -12,7 +14,7 @@
           acting without the mediation of third parties. The site is open to
           those who want to share or request books, and also encourages users to
           organize events for mass book exchange.
-        </p>
+        </h5>
       </v-card>
 
       <br />
@@ -21,18 +23,20 @@
 
       <v-row>
         <v-col v-for="item in items" :key="item.id">
-          <v-card class="mx-auto rounded-xl" max-width="1050" color="#EBF5FB">
+          <v-card
+           dark class="mx-auto rounded-xl" max-width="100%" style="background-image: linear-gradient(200deg, #1DCCE0, #4247DD);" :elevation="15"
+          >
             <h2 class="text-center font-weight-bold">Sri Lankan ambassador</h2>
             <v-divider></v-divider>
 
             <div class="d-flex">
-              <dev>
+              <div>
                 <v-avatar class="mt-7 ml-3 rounded-xl" size="250" tile>
                   <v-img :src="item.src"></v-img>
                 </v-avatar>
-              </dev>
+              </div>
 
-              <dev>
+              <div>
                 <h4 class="font-weight-bold text-center ml-5 mt-1">
                   - Giwantha pitawala -
                 </h4>
@@ -50,16 +54,18 @@
 
                 <h5 class="font-weight-bold text-right">– Charles W. Eliot</h5>
                 <v-card-text>
-                  <v-icon size="24px" class="ml-6"> mdi-facebook </v-icon>-
-                  Giwantha pitawala
-                  <v-icon size="24px" class="ml-6"> mdi-linkedin </v-icon>-
-                  GiwiPitz
-                  <v-icon size="24px" class="ml-6"> mdi-dialpad </v-icon>-
-                  071-6786786
-                  <v-icon size="24px" class="ml-6"> mdi-email </v-icon>-
-                  Pitawalagiwi@gmail.com</v-card-text
+                  <div  class="d-flex justify-space-between">
+                    <div><v-icon size="25px" class="ml-6"> mdi-facebook </v-icon>-
+                  Giwantha pitawala </div>
+                  <div><v-icon size="25px" class="ml-6"> mdi-linkedin </v-icon>-
+                  GiwiPitz</div>
+                  <div><v-icon size="25px" class="ml-6"> mdi-dialpad </v-icon>-
+                  071-6786786 </div>
+                  <div><v-icon size="25px" class="ml-6"> mdi-email </v-icon>-
+                  Pitawalagiwi@gmail.com </div>
+                  </div></v-card-text
                 >
-              </dev>
+              </div>
             </div>
           </v-card>
         </v-col>
