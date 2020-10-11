@@ -1,7 +1,9 @@
 <template>
+<div class="block latestPostBlock">
   <v-container>
+    <h2 class="text-center">Book Request</h2>
     <div class="descriptionCard">
-      <v-card class="mx-auto rounded-xl" color="#616161" dark max-width="700">
+      <v-card class="mx-auto rounded-xl" color="#E0E0E0" dark max-width="500">
         <validation-observer ref="observer" v-slot="">
           <form>
             <validation-provider
@@ -53,16 +55,6 @@
                 required
               ></v-text-field>
             </validation-provider>
-            <validation-provider v-slot="" rules="required" name="checkbox">
-              <v-checkbox
-                v-model="checkbox"
-                :error-messages="errors"
-                value="1"
-                label="Option"
-                type="checkbox"
-                required
-              ></v-checkbox>
-            </validation-provider>
 
             <v-btn class="mr-4" @click="submit">
               submit
@@ -74,7 +66,14 @@
         </validation-observer>
       </v-card>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </v-container>
+</div>
 </template>
 
 <script>

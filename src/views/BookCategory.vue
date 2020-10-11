@@ -98,85 +98,96 @@
         <h3>Related Books</h3>
         <div id="relateditemlist">
           <div id="relatedItemgroup">
-           
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-           <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>            
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
               max-width="150"
               src="../assets/images/science.jpg"
             ></v-img>
-            <v-img @click="selectitem(a)"
+            <v-img
+              @click="selectitem(a)"
+              id="Image3"
+              class="related_image"
+              max-height="300"
+              max-width="150"
+              src="../assets/images/science.jpg"
+            ></v-img>
+            <v-img
+              @click="selectitem(a)"
               id="Image3"
               class="related_image"
               max-height="300"
@@ -190,7 +201,19 @@
           rounded
           value="100"
         ></v-progress-linear>
-        <h3>Customer Reviews</h3> 
+        <h3>Customer Reviews</h3>
+        <table id="reviewTable" v-html="test"></table>
+
+        <v-text-field id="reviewText" label="Write Your Review"></v-text-field>
+        <v-btn
+          id="submitbtn"
+          rounded
+          color="cyan darken-2"
+          dark
+          @click="SetReview()"
+        >
+          SUBMIT
+        </v-btn>
       </v-card>
     </div>
   </v-content>
@@ -199,18 +222,41 @@
 <script>
 export default {
   name: "BookOffers",
-  
 
   data() {
     return {
       items: [],
+      ReviewArray: [],
+
+      reviewText: this.reviewText,
     };
   },
+  mounted: function () {
+    this.apendreview();
+  },
   methods: {
-    selectitem: function() {
-      alert()
-    }
-  }
+    selectitem: function () {
+      alert();
+    },
+    SetReview: function () {
+      this.ReviewArray.push(
+        '<tr> <ul><li><label class="R_Name">Harshit Sharma</label></li></ul><label class="R_details">' +
+          document.getElementById("reviewText").value +
+          "</label></tr>"
+      );
+
+      this.$session.set("Addreview", this.ReviewArray);
+      document.getElementById("reviewText").value = "";
+      this.apendreview();
+    },
+    apendreview: function () {
+      var ReviewArraynext = this.$session.get("Addreview");
+      for (var key in ReviewArraynext) {
+        document.getElementById("reviewTable").insertRow(0).innerHTML =
+          ReviewArraynext[key];
+      }
+    },
+  },
 };
 </script>
 
@@ -226,7 +272,7 @@ export default {
   margin-left: 31px;
   margin-bottom: 15px;
 }
-.related_image:hover{
+.related_image:hover {
   opacity: 50%;
 }
 #relateditemlist {
@@ -238,20 +284,51 @@ export default {
   animation: myfirst 15s 2;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-
 }
-@keyframes myfirst { 
-  0%  {margin-left: -100px;}
-  10% {margin-left: -200px;}
-  20% {margin-left: -300px;} 
-  30% {margin-left: -400px;}
-  40% {margin-left: -500px;} 
-  50% {margin-left: -600px;} 
-  60% {margin-left: -600px;} 
-  70% {margin-left: -500px;} 
-  80% {margin-left: -400px;} 
-  90% {margin-left: -300px;} 
-  100%{margin-left: -200px;} 
+@keyframes myfirst {
+  0% {
+    margin-left: -100px;
+  }
+  10% {
+    margin-left: -200px;
+  }
+  20% {
+    margin-left: -300px;
+  }
+  30% {
+    margin-left: -400px;
+  }
+  40% {
+    margin-left: -500px;
+  }
+  50% {
+    margin-left: -600px;
+  }
+  60% {
+    margin-left: -600px;
+  }
+  70% {
+    margin-left: -500px;
+  }
+  80% {
+    margin-left: -400px;
+  }
+  90% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -200px;
+  }
+}
+#submitbtn {
+  width: 100%;
+}
+.R_Name {
+  font-size: 15px;
+  font-weight: bold;
+}
+.R_details {
+  margin-left: 30px;
 }
 /* jhdcjch */
 </style>

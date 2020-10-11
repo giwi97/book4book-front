@@ -1,27 +1,19 @@
 <template>
   <v-app>
-    <v-app-bar
-      style="background-image: linear-gradient(to right, #C04848, #480048);"
-      flat
-    >
+    <v-app-bar flat app color="#212121">
       <Header />
     </v-app-bar>
-
-    <HeaderS />
-
+    <v-divider dark></v-divider>
     <router-view> </router-view>
 
-    <v-footer
-      style="background-image: linear-gradient(to right, #C04848, #480048);width:100%;"
-    >
-      <Footer />
-    </v-footer>
+    <v-divider></v-divider>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Header from "./components/Header";
-import HeaderS from "./components/HeaderS";
+// import HeaderS from "./components/HeaderS";
 import Footer from "./components/Footer";
 
 export default {
@@ -30,7 +22,7 @@ export default {
   components: {
     Header,
     Footer,
-    HeaderS,
+    // HeaderS,
   },
 
   data: () => ({
