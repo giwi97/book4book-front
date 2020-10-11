@@ -3,7 +3,7 @@
   <v-container>
     <h2 class="text-center">Book Request</h2>
     <div class="descriptionCard">
-      <v-card class="mx-auto rounded-xl" color="#E0E0E0" dark max-width="500">
+      <v-card class="mx-auto rounded-xl" color="#g6dh4" dark max-width="500">
         <validation-observer ref="observer" v-slot="">
           <form>
             <validation-provider
@@ -56,10 +56,10 @@
               ></v-text-field>
             </validation-provider>
 
-            <v-btn class="mr-4" @click="submit">
+            <v-btn rounded color="success" @click="submit">
               submit
             </v-btn>
-            <v-btn @click="clear">
+            <v-btn rounded color="error" @click="clear">
               clear
             </v-btn>
           </form>
