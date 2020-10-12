@@ -1,20 +1,4 @@
 <template>
-
-  <v-container>
-    <v-footer padless>
-      <v-card flat tile class="text-center">
-        <div class="text-center">
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
-          <router-link to="/contactus">Contact Us</router-link>
-          </v-btn>
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
-          <router-link to="/feedback">Feedback</router-link>  
-          </v-btn>
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
-            FAQ
-          </v-btn>
-        </div>
-
   <div style="width: 100%;">
     <v-card
       flat
