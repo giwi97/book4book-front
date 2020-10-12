@@ -2,22 +2,20 @@
   <div class="block latestPostBlock">
     <h2 class="text-center">Members</h2>
     <v-card :loading="isUpdating">
-
-        <v-row>
-
-          <v-row class="pa-4" align="center" justify="center">
-            <v-col class="text-center">
-              <h3 class="headline">
-                {{ name }}
-              </h3>
-              <span class="grey--text text--lighten-1">{{ title }}</span>
-            </v-col>
-          </v-row>
+      <v-row>
+        <v-row class="pa-4" align="center" justify="center">
+          <v-col class="text-center">
+            <h3 class="headline">
+              {{ name }}
+            </h3>
+            <span class="grey--text text--lighten-1">{{ title }}</span>
+          </v-col>
         </v-row>
+      </v-row>
       <v-form>
         <v-container>
           <v-row>
-                          <v-col cols="12">
+            <v-col cols="12">
               <v-autocomplete
                 v-model="friends"
                 :disabled="isUpdating"
@@ -42,6 +40,7 @@
                       <v-img :src="data.item.avatar"></v-img>
                     </v-avatar>
                     {{ data.item.name }}
+                    {{ data.item.email }}
                   </v-chip>
                 </template>
                 <template v-slot:item="data">
@@ -68,8 +67,9 @@
             </v-col>
             <v-col cols="12" md="6">
               <v-text-field
-                v-model="name"
+                v-model="friends"
                 :disabled="isUpdating"
+                :items="people"
                 filled
                 color="blue-grey lighten-2"
                 label="Name"
@@ -84,7 +84,6 @@
                 label="Title"
               ></v-text-field>
             </v-col>
-
           </v-row>
         </v-container>
       </v-form>
@@ -135,16 +134,56 @@ export default {
       name: "",
       people: [
         { header: "Group 1" },
-        { name: "Sandra Adams", group: "Group 1", avatar: srcs[1] },
-        { name: "Ali Connors", group: "Group 1", avatar: srcs[2] },
-        { name: "Trevor Hansen", group: "Group 1", avatar: srcs[3] },
-        { name: "Tucker Smith", group: "Group 1", avatar: srcs[2] },
+        {
+          name: "Sandra Adams",
+          group: "Group 1",
+          avatar: srcs[1],
+          email: "sandra@gmail.com",
+        },
+        {
+          name: "Ali Connors",
+          group: "Group 1",
+          avatar: srcs[2],
+          email: "alicon@gmail.com",
+        },
+        {
+          name: "Trevor Hansen",
+          group: "Group 1",
+          avatar: srcs[3],
+          email: "trevor@gmail.com",
+        },
+        {
+          name: "Tucker Smith",
+          group: "Group 1",
+          avatar: srcs[2],
+          email: "tuck@gmail.com",
+        },
         { divider: true },
         { header: "Group 2" },
-        { name: "Britta Holt", group: "Group 2", avatar: srcs[4] },
-        { name: "Jane Smith ", group: "Group 2", avatar: srcs[5] },
-        { name: "John Smith", group: "Group 2", avatar: srcs[1] },
-        { name: "Sandra Williams", group: "Group 2", avatar: srcs[3] },
+        {
+          name: "Britta Holt",
+          group: "Group 2",
+          avatar: srcs[4],
+          email: "britta@gmail.com",
+        },
+        {
+          name: "Jane Smith ",
+          group: "Group 2",
+          avatar: srcs[5],
+          email: "jane@gmail.com",
+        },
+        {
+          name: "John Smith",
+          group: "Group 2",
+          avatar: srcs[1],
+          email: "john@gmail.com",
+        },
+        {
+          name: "Sandra Williams",
+          group: "Group 2",
+          avatar: srcs[3],
+          email: "sandrawil@gmail.com",
+        },
       ],
       title: "The summer breeze",
     };
