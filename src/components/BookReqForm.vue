@@ -1,71 +1,102 @@
 <template>
-  <v-container>
-    <div class="descriptionCard">
-      <v-card class="mx-auto rounded-xl" color="#3b453f" dark max-width="700">
-        <validation-observer ref="observer" v-slot="">
-          <form>
-              
-            <validation-provider
-              v-slot="{ errors }"
-              name="Name"
-              rules="required|max:10"
-            >
-              <v-text-field
-                v-model="name"
-                :counter="10"
-                :error-messages="errors"
-                label="Name"
-                required
-              ></v-text-field>
-            </validation-provider>
-            <validation-provider
-              v-slot="{ errors }"
-              name="email"
-              rules="required|email"
-            >
-              <v-text-field
-                v-model="email"
-                :error-messages="errors"
-                label="E-mail"
-                required
-              ></v-text-field>
-            </validation-provider>
-            <validation-provider
-              v-slot="{ errors }"
-              name="select"
-              rules="required"
-            >
-              <v-select
-                v-model="select"
-                :items="items"
-                :error-messages="errors"
-                label="Select"
-                data-vv-name="select"
-                required
-              ></v-select>
-            </validation-provider>
-            <validation-provider v-slot="" rules="required" name="checkbox">
-              <v-checkbox
-                v-model="checkbox"
-                :error-messages="errors"
-                value="1"
-                label="Option"
-                type="checkbox"
-                required
-              ></v-checkbox>
-            </validation-provider>
+  <div class="block latestPostBlock">
+    <v-container>
+      <h2 class="text-center">Book Request</h2>
+      <div class="descriptionCard">
+        <v-card class="mx-auto lg" color="#E0E0E0" max-width="500">
+          <v-spacer></v-spacer>
+          <validation-observer ref="observer" v-slot="">
+            <form style="padding:10px;">
+              <validation-provider
+                v-slot="{ errors }"
+                name="Name"
+                rules="required|max:100"
+              >
+                <v-text-field
+                  v-model="name"
+                  :counter="100"
+                  :error-messages="errors"
+                  label="Name"
+                  required
+                ></v-text-field>
+              </validation-provider>
+              <validation-provider
+                v-slot="{ errors }"
+                name="email"
+                rules="required|email"
+              >
+                <v-text-field
+                  v-model="email"
+                  :error-messages="errors"
+                  label="E-mail"
+                  required
+                ></v-text-field>
+              </validation-provider>
+              <validation-provider
+                v-slot="{ errors }"
+                name="address"
+                rules="required"
+              >
+                <v-text-field
+                  v-model="address"
+                  :error-messages="errors"
+                  label="Your Address"
+                  required
+                ></v-text-field>
+              </validation-provider>
+              <validation-provider
+                v-slot="{ errors }"
+                name="book"
+                rules="required"
+              >
+                <v-text-field
+                  v-model="book"
+                  :error-messages="errors"
+                  label="Book name"
+                  required
+                ></v-text-field>
+              </validation-provider>
 
-            <v-btn class="mr-4" @click="submit">
-              submit
-            </v-btn>
-            <v-btn @click="clear">
-              clear
-            </v-btn>
-          </form>
-        </validation-observer>
-      </v-card>
-    </div>
-  </v-container>
+              <br />
+              <v-row align="end" justify-md="end">
+                <!-- @click="submit"                  -->
+                <v-btn
+                  :disabled="dialog"
+                  :loading="dialog"
+                  rounded
+                  color="success"
+                  @click="dialog = true"
+                >
+                  submit
+                </v-btn>
+                <v-btn rounded color="error" @click="clear">
+                  clear
+                </v-btn>
+                <v-dialog v-model="dialog" hide-overlay persistent width="300">
+                  <v-card color="primary" dark>
+                    <v-card-text>
+                      Please wait...
+                      <v-progress-linear
+                        indeterminate
+                        color="white"
+                        class="mb-0"
+                      ></v-progress-linear>
+                    </v-card-text>
+                  </v-card>
+                </v-dialog>
+              </v-row>
+            </form>
+          </validation-observer>
+        </v-card>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -105,10 +136,10 @@ export default {
   data: () => ({
     name: "",
     email: "",
-    select: null,
+    address: "",
+    book: "",
     errors: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: null,
+    dialog: false,
   }),
 
   methods: {
@@ -118,9 +149,23 @@ export default {
     clear() {
       this.name = "";
       this.email = "";
-      this.select = null;
-      this.checkbox = null;
+      this.address = "";
+      this.book = "";
       this.$refs.observer.reset();
+    },
+  },
+  watch: {
+    dialog(val) {
+      this.$refs.observer.validate();
+      if (!this.errors) {
+        if (!val) return;
+        setTimeout(() => (this.dialog = false), 4000);
+        setTimeout(() => this.$router.push({ path: '/bookrequest'}), 4000);
+        
+      }else{
+        return false
+      }
+      //this.$router.push("/login");
     },
   },
 };

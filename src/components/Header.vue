@@ -1,24 +1,80 @@
 <template>
-  <v-container>
-    <v-toolbar prominent flat>
-      <v-toolbar-title>Book4Book</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <div class="text-center" style="padding-top:70px;">
-        <v-btn class="ma-2" rounded color="#26c6da">
-          <router-link to="/signup">Sign-up</router-link>
-        </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#26c6da">
-          <router-link to="/login">Login</router-link>
-        </v-btn>
-      </div>
-    </v-toolbar>
-  </v-container>
+  <div style="width:100%;">
+    <v-card flat style="width:100%;">
+      <v-app-bar dark flat color="#212121">
+        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+           Menu    
+        <v-spacer></v-spacer>
+        <v-toolbar-title @click="$router.push('/')" style="cursor:pointer">Book4Book</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <div>
+          <v-btn rounded outlined depressed  style="font-size: 10px;font-weight: bold;" to="/Login">
+            Register / Login
+          </v-btn>
+          <v-btn rounded outlined color="#26C6DA" dark style="font-size: 10px;font-weight: bold;margin-left:5px;" to="/BookCategory">
+            Categories
+          </v-btn>
+        </div>
+      </v-app-bar>
+
+      <v-navigation-drawer v-model="drawer" absolute temporary height="1000">
+        <v-list nav>
+          <v-list-item-group
+            v-model="group"
+            active-class="deep-purple--text text--accent-4"
+          >
+            <v-list-item>
+              <router-link to="/">
+              <v-list-item-title>Home</v-list-item-title>
+              </router-link>
+            </v-list-item>
+
+            <v-list-item>
+              <router-link to="/bookrequest">
+              <v-list-item-title>Book Request</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+             <router-link to="/bookoffers">
+              <v-list-item-title>Book Offers</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/events">
+              <v-list-item-title>Events</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/members">
+              <v-list-item-title>Members</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/groups">
+              <v-list-item-title>Groups</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/howitworks">
+              <v-list-item-title>How it works</v-list-item-title>
+              </router-link>
+            </v-list-item>
+            <v-list-item>
+              <router-link to="/aboutus">
+              <v-list-item-title>About Us</v-list-item-title>
+              </router-link>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+    </v-card>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Header",
 
-  data: () => ({}),
+  data: () => ({ drawer: null, group: null }),
 };
 </script>

@@ -1,8 +1,6 @@
 // hero block
 .heroBlock {
-  
   position: relative;
-
 
   .v-window {
     @media only screen and (max-width: 599px) {
@@ -12,7 +10,7 @@
 
   .v-image__image {
     &:before {
-      content: '';
+      content: "";
       background: rgba(0, 0, 0, 0.3);
       position: absolute;
       top: 0;
@@ -36,39 +34,23 @@
   background: darken($white, 2%);
 
   .v-card__title {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 
 //Description on home
 
-.descriptionCard{
-
+.descriptionCard {
   padding-top: 50px;
-
 }
 
-.mx-auto{
-
+.mx-auto {
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
-
 }
 
-.text-center{
+.text-center {
   margin: auto;
-}
-
-
-//HeaderS
-.headers{
-  padding-top: 20px;
-}
-
-//search
-.searchbar{
-  position: sticky;
-
 }

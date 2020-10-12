@@ -2,6 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
+import VueSession from "vue-session";
+Vue.use(VueSession)
 
 import Home from "./views/Home";
 import BookRequest from "./views/BookRequest";
@@ -15,6 +17,8 @@ import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Feedback from "./views/Feedback";
 import ContactUs from "./views/ContactUs"; 
+import BookCategory from "./views/BookCategory";
+
 
 Vue.use(VueRouter);
 
@@ -36,6 +40,7 @@ const router = new VueRouter({
     { path: "/login", component: Login },
     { path: "/feedback", component: Feedback},
     { path: "/contactus", component: ContactUs},
+    { path: "/BookCategory", component: BookCategory },
   ],
 });
 
