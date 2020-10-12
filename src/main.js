@@ -15,7 +15,10 @@ import HowItWorks from "./views/HowItWorks";
 import AboutUs from "./views/AboutUs";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
+import Feedback from "./views/Feedback";
+import ContactUs from "./views/ContactUs"; 
 import BookCategory from "./views/BookCategory";
+
 
 Vue.use(VueRouter);
 
@@ -35,8 +38,9 @@ const router = new VueRouter({
     { path: "/aboutus", component: AboutUs },
     { path: "/signup", component: Signup },
     { path: "/login", component: Login },
+    { path: "/feedback", component: Feedback},
+    { path: "/contactus", component: ContactUs},
     { path: "/BookCategory", component: BookCategory },
-
   ],
 });
 
