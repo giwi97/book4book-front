@@ -1,6 +1,7 @@
 <template>
   <div class="block latestPostBlock">
     <h2 class="text-center">Members</h2>
+
     <v-card color="red lighten-2" dark>
       <v-card-title class="headline red lighten-3">
         Search for Public APIs
@@ -54,95 +55,65 @@
       </v-card-actions>
     </v-card>
   </div>
-</template>
+</template> 
+
 
 <script>
-export default {
-  name: "MembersP",
+  export default {
+    name: "MembersP",
+    data: () => ({
+      descriptionLimit: 60,
+      entries: [],
+      isLoading: false,
+      model: null,
+      search: null,
+    }),
 
-  data() {
-    const srcs = {
-      1: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-      2: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-      3: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-      4: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
-      5: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
-    };
+    computed: {
+      fields () {
+        if (!this.model) return []
 
-    return {
-      autoUpdate: true,
-      isUpdating: false,
-      name: "",
-      people: [
-        { header: "Group 1" },
-        {
-          name: "Sandra Adams",
-          group: "Group 1",
-          avatar: srcs[1],
-          email: "sandra@gmail.com",
-        },
-        {
-          name: "Ali Connors",
-          group: "Group 1",
-          avatar: srcs[2],
-          email: "alicon@gmail.com",
-        },
-        {
-          name: "Trevor Hansen",
-          group: "Group 1",
-          avatar: srcs[3],
-          email: "trevor@gmail.com",
-        },
-        {
-          name: "Tucker Smith",
-          group: "Group 1",
-          avatar: srcs[2],
-          email: "tuck@gmail.com",
-        },
-        { divider: true },
-        { header: "Group 2" },
-        {
-          name: "Britta Holt",
-          group: "Group 2",
-          avatar: srcs[4],
-          email: "britta@gmail.com",
-        },
-        {
-          name: "Jane Smith ",
-          group: "Group 2",
-          avatar: srcs[5],
-          email: "jane@gmail.com",
-        },
-        {
-          name: "John Smith",
-          group: "Group 2",
-          avatar: srcs[1],
-          email: "john@gmail.com",
-        },
-        {
-          name: "Sandra Williams",
-          group: "Group 2",
-          avatar: srcs[3],
-          email: "sandrawil@gmail.com",
-        },
-      ],
-      title: "The summer breeze",
-    };
-  },
+        return Object.keys(this.model).map(key => {
+          return {
+            key,
+            value: this.model[key] || 'n/a',
+          }
+        })
+      },
+      items () {
+        return this.entries.map(entry => {
+          const Description = entry.Description.length > this.descriptionLimit
+            ? entry.Description.slice(0, this.descriptionLimit) + '...'
+            : entry.Description
 
-  watch: {
-    isUpdating(val) {
-      if (val) {
-        setTimeout(() => (this.isUpdating = false), 3000);
-      }
+          return Object.assign({}, entry, { Description })
+        })
+      },
     },
-  },
 
-  methods: {
-    remove(item) {
-      const index = this.friends.indexOf(item.name);
-      if (index >= 0) this.friends.splice(index, 1);
+    watch: {
+      search () {
+        // Items have already been loaded
+        if (this.items.length > 0) return
+
+        // Items have already been requested
+        if (this.isLoading) return
+
+        this.isLoading = true
+
+        // Lazily load input items
+        fetch('../assets/dataMem.json')
+          .then(res => res.json())
+          .then(res => {
+            const { count, entries } = res
+            this.count = count
+            this.entries = entries
+          })
+          .catch(err => {
+            console.log(err)
+          })
+          .finally(() => (this.isLoading = false))
+      },
     },
-  },
-};
+  }
 </script>
