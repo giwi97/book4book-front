@@ -60,7 +60,7 @@
   export default {
     name: "MembersP",
     data: () => ({
-      descriptionLimit: 60,
+      addressLimit: 60,
       entries: [],
       isLoading: false,
       model: null,
@@ -80,11 +80,11 @@
       },
       items () {
         return this.entries.map(entry => {
-          const Description = entry.Description.length > this.descriptionLimit
-            ? entry.Description.slice(0, this.descriptionLimit) + '...'
-            : entry.Description
+          const Address = entry.Address.length > this.addressLimit
+            ? entry.Address.slice(0, this.addressLimit) + '...'
+            : entry.Address
 
-          return Object.assign({}, entry, { Description })
+          return Object.assign({}, entry, { Address })
         })
       },
     },
