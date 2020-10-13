@@ -4,17 +4,10 @@
 
     <v-card color="red lighten-2" dark>
       <v-card-title class="headline red lighten-3">
-        Search for Public APIs
+        Search for Members
       </v-card-title>
       <v-card-text>
-        Explore hundreds of free API's ready for consumption! For more
-        information visit
-        <a
-          class="grey--text text--lighten-3"
-          href="https://github.com/toddmotto/public-apis"
-          target="_blank"
-          >the Github repository</a
-        >.
+        Explore hundreds of Members around you..
       </v-card-text>
       <v-card-text>
         <v-autocomplete
@@ -27,9 +20,9 @@
           hide-selected
           item-text="Description"
           item-value="API"
-          label="Public APIs"
+          label="Search Member by Name"
           placeholder="Start typing to Search"
-          prepend-icon="mdi-database-search"
+          append-icon="mdi-magnify"
           return-object
         ></v-autocomplete>
       </v-card-text>
@@ -59,6 +52,7 @@
 
 
 <script>
+
   export default {
     name: "MembersP",
     data: () => ({
@@ -102,17 +96,18 @@
         this.isLoading = true
 
         // Lazily load input items
-        fetch('../assets/dataMem.json')
-          .then(res => res.json())
-          .then(res => {
+        const res = require('../assets/dataMem.json')
+        //const { a, b } = test
+
+
             const { count, entries } = res
             this.count = count
             this.entries = entries
-          })
-          .catch(err => {
-            console.log(err)
-          })
-          .finally(() => (this.isLoading = false))
+  
+          // .catch(err => {
+          //   console.log(err)
+          // })
+          // .finally(() => (this.isLoading = false))
       },
     },
   }
