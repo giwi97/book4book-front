@@ -2,7 +2,7 @@
   <div class="block latestPostBlock">
     <h2 class="text-center">Members</h2>
 
-    <v-card color="red lighten-2" dark>
+    <v-card color="red lighten-2" dark width="500" style="margin:auto;">
       <v-card-title class="headline red lighten-3">
         Search for Members
       </v-card-title>
@@ -18,7 +18,7 @@
           color="white"
           hide-no-data
           hide-selected
-          item-text="Description"
+          item-text="Name"
           item-value="API"
           label="Search Member by Name"
           placeholder="Start typing to Search"
@@ -30,10 +30,12 @@
       <v-expand-transition>
         <v-list v-if="model" class="red lighten-3">
           <v-list-item v-for="(field, i) in fields" :key="i">
+
             <v-list-item-content>
-              <v-list-item-title v-text="field.value"></v-list-item-title>
               <v-list-item-subtitle v-text="field.key"></v-list-item-subtitle>
+              <v-list-item-title v-text="field.value"></v-list-item-title>              
             </v-list-item-content>
+
           </v-list-item>
         </v-list>
       </v-expand-transition>
@@ -47,6 +49,8 @@
         </v-btn>
       </v-card-actions>
     </v-card>
+    <br>
+    <br>
   </div>
 </template> 
 
