@@ -38,57 +38,86 @@
             v-model="group"
             active-class="deep-purple--text text--accent-4"
           >
+            <!-- <v-form>
+          <v-col
+          cols="12"
+          sm="6"
+          md="4"
+        > -->
 
-          <br>
-          <br>
+            <v-text-field
+              label="Search"
+              filled
+              rounded
+              append-icon="mdi-magnify"
+            ></v-text-field>
+
+            <!-- </v-col> -->
+            <!-- </v-form> -->
+            <br />
+            <br />
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/">
-                <v-list-item-title>Home</v-list-item-title>
-              </router-link>
-            </v-list-item>
+            <router-link to="/">
+              <v-list-item>
+                <h4 style="font-weight:bold;">Home</h4>
+              </v-list-item>
+            </router-link>
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/bookrequest">
-                <v-list-item-title>Book Request</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/bookrequest">
+              <v-list-item>
+                <h4 style="font-weight:bold;">Book Request</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/bookoffers">
-                <v-list-item-title>Book Offers</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/bookoffers">
+              <v-list-item>
+                <h4 style="font-weight:bold;">Book Offers</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/events">
-                <v-list-item-title>Events</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/events">
+              <v-list-item>
+                <h4 style="font-weight:bold;">Events</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/members">
-                <v-list-item-title>Members</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/members">
+              <v-list-item>
+                <h4 style="font-weight:bold;">Members</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/groups">
-                <v-list-item-title>Groups</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/groups">
+              <v-list-item>
+                <h4 style="font-weight:bold;">Groups</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/howitworks">
-                <v-list-item-title>How it works</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/howitworks">
+              <v-list-item>
+                <h4 style="font-weight:bold;">How it works</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
-            <v-list-item>
-              <router-link to="/aboutus">
-                <v-list-item-title>About Us</v-list-item-title>
-              </router-link>
-            </v-list-item>
+
+            <router-link to="/aboutus">
+              <v-list-item>
+                <h4 style="font-weight:bold;">About Us</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
           </v-list-item-group>
         </v-list>
