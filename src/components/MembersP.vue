@@ -1,167 +1,125 @@
 <template>
-  <div class="block latestPostBlock">
-    <h2 class="text-center">Members</h2>
-    <v-card :loading="isUpdating">
-
-        <v-row>
-
-          <v-row class="pa-4" align="center" justify="center">
-            <v-col class="text-center">
-              <h3 class="headline">
-                {{ name }}
-              </h3>
-              <span class="grey--text text--lighten-1">{{ title }}</span>
-            </v-col>
-          </v-row>
+  <div>
+    <div class="staticHero">
+      <v-img max-height="230" src="../assets/images/img14.jpg">
+        <v-row align="end" class="lightbox white--text pa-2 fill-height">
+          <v-col>
+            <v-container>
+              <div class="headline">Members</div>
+            </v-container>
+          </v-col>
         </v-row>
-      <v-form>
-        <v-container>
-          <v-row>
-                          <v-col cols="12">
-              <v-autocomplete
-                v-model="friends"
-                :disabled="isUpdating"
-                :items="people"
-                filled
-                chips
-                color="blue-grey lighten-2"
-                label="Search Members"
-                item-text="name"
-                item-value="name"
-                multiple
-              >
-                <template v-slot:selection="data">
-                  <v-chip
-                    v-bind="data.attrs"
-                    :input-value="data.selected"
-                    close
-                    @click="data.select"
-                    @click:close="remove(data.item)"
-                  >
-                    <v-avatar left>
-                      <v-img :src="data.item.avatar"></v-img>
-                    </v-avatar>
-                    {{ data.item.name }}
-                  </v-chip>
-                </template>
-                <template v-slot:item="data">
-                  <template v-if="typeof data.item !== 'object'">
-                    <v-list-item-content
-                      v-text="data.item"
-                    ></v-list-item-content>
-                  </template>
-                  <template v-else>
-                    <v-list-item-avatar>
-                      <img :src="data.item.avatar" />
-                    </v-list-item-avatar>
-                    <v-list-item-content>
-                      <v-list-item-title
-                        v-html="data.item.name"
-                      ></v-list-item-title>
-                      <v-list-item-subtitle
-                        v-html="data.item.group"
-                      ></v-list-item-subtitle>
-                    </v-list-item-content>
-                  </template>
-                </template>
-              </v-autocomplete>
-            </v-col>
-            <v-col cols="12" md="6">
-              <v-text-field
-                v-model="name"
-                :disabled="isUpdating"
-                filled
-                color="blue-grey lighten-2"
-                label="Name"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" md="6">
-              <v-text-field
-                v-model="title"
-                :disabled="isUpdating"
-                filled
-                color="blue-grey lighten-2"
-                label="Title"
-              ></v-text-field>
-            </v-col>
+      </v-img>
+    </div>
+    <div class="line" id="scrollIndicator"></div>
+    <div class="block">
+      <h2 class="text-center">Members</h2>
 
-          </v-row>
-        </v-container>
-      </v-form>
-      <v-divider></v-divider>
-      <!-- <v-card-actions>
-        <v-switch
-          v-model="autoUpdate"
-          :disabled="isUpdating"
-          class="mt-0"
-          color="green lighten-2"
-          hide-details
-          label="Auto Update"
-        ></v-switch>
-        <v-spacer></v-spacer>
-        <v-btn
-          :disabled="autoUpdate"
-          :loading="isUpdating"
-          color="blue-grey darken-3"
-          depressed
-          @click="isUpdating = true"
-        >
-          <v-icon left>
-            mdi-update
-          </v-icon>
-          Update Now
-        </v-btn>
-      </v-card-actions> -->
-    </v-card>
+      <v-card color="#37474F" width="500" style="margin:auto;">
+        <v-card-text>
+          <v-autocomplete
+            item-color="grey"
+            filled
+            rounded
+            dark
+            v-model="model"
+            :items="items"
+            :loading="isLoading"
+            :search-input.sync="search"
+            color="primary"
+            hide-no-data
+            hide-selected
+            item-text="Name"
+            item-value="API"
+            label="Search Member by Name"
+            placeholder="Start typing to Search"
+            append-icon="mdi-magnify"
+            return-object
+          ></v-autocomplete>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-expand-transition>
+          <v-list v-if="model" color="#424242" dark>
+            <v-list-item v-for="(field, i) in fields" :key="i">
+              <v-list-item-content>
+                <v-list-item-subtitle v-text="field.key"></v-list-item-subtitle>
+                <v-list-item-title v-text="field.value"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-expand-transition>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn :disabled="!model" color="red" @click="model = null" dark>
+            Clear
+            <v-icon right>
+              mdi-close-circle
+            </v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+      <br />
+      <br />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "MembersP",
+  data: () => ({
+    addressLimit: 60,
+    entries: [],
+    isLoading: false,
+    model: null,
+    search: null,
+  }),
 
-  data() {
-    const srcs = {
-      1: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-      2: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-      3: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-      4: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
-      5: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
-    };
+  computed: {
+    fields() {
+      if (!this.model) return [];
 
-    return {
-      autoUpdate: true,
-      isUpdating: false,
-      name: "",
-      people: [
-        { header: "Group 1" },
-        { name: "Sandra Adams", group: "Group 1", avatar: srcs[1] },
-        { name: "Ali Connors", group: "Group 1", avatar: srcs[2] },
-        { name: "Trevor Hansen", group: "Group 1", avatar: srcs[3] },
-        { name: "Tucker Smith", group: "Group 1", avatar: srcs[2] },
-        { divider: true },
-        { header: "Group 2" },
-        { name: "Britta Holt", group: "Group 2", avatar: srcs[4] },
-        { name: "Jane Smith ", group: "Group 2", avatar: srcs[5] },
-        { name: "John Smith", group: "Group 2", avatar: srcs[1] },
-        { name: "Sandra Williams", group: "Group 2", avatar: srcs[3] },
-      ],
-      title: "The summer breeze",
-    };
-  },
+      return Object.keys(this.model).map((key) => {
+        return {
+          key,
+          value: this.model[key] || "n/a",
+        };
+      });
+    },
+    items() {
+      return this.entries.map((entry) => {
+        const Address =
+          entry.Address.length > this.addressLimit
+            ? entry.Address.slice(0, this.addressLimit) + "..."
+            : entry.Address;
 
-  watch: {
-    isUpdating(val) {
-      if (val) {
-        setTimeout(() => (this.isUpdating = false), 3000);
-      }
+        return Object.assign({}, entry, { Address });
+      });
     },
   },
 
-  methods: {
-    remove(item) {
-      const index = this.friends.indexOf(item.name);
-      if (index >= 0) this.friends.splice(index, 1);
+  watch: {
+    search() {
+      // Items have already been loaded
+      if (this.items.length > 0) return;
+
+      // Items have already been requested
+      if (this.isLoading) return;
+
+      this.isLoading = true;
+
+      // Lazily load input items
+      const res = require("../assets/dataMem.json");
+      //const { a, b } = test
+
+      const { count, entries } = res;
+      this.count = count;
+      this.entries = entries;
+
+      // .catch(err => {
+      //   console.log(err)
+      // })
+      // .finally(() => (this.isLoading = false))
     },
   },
 };

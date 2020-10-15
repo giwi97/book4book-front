@@ -20,9 +20,11 @@ import ContactUs from "./views/ContactUs";
 import BookCategory from "./views/BookCategory";
 import EbookGroup from "./views/EbookGroup";
 import FAQpage from "./views/FAQpage";
-
-
-
+import Editpro from "./views/Editpro";
+import TimeL from "./views/TimeL";
+import Profile from "./views/Profile";
+import BookDetails from "./views/BookDetails";
+import AddBook from "./views/AddBook";
 
 
 Vue.use(VueRouter);
@@ -48,13 +50,11 @@ const router = new VueRouter({
     { path: "/BookCategory", component: BookCategory },
     { path: "/ebookgroup", component: EbookGroup},
     { path: "/faqpage", component: FAQpage},
-
-   
-
-
-
-
-
+    { path: "/Editpro", component: Editpro },
+    { path: "/TimeL", component: TimeL },
+    { path: "/Profile", component: Profile },
+    { path: "/BookDetails", component: BookDetails }, 
+    { path: "/AddBook", component: AddBook }, 
   ],
 });
 

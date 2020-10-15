@@ -1,7 +1,4 @@
 <template>
-  <v-container>
-    <v-footer padless>
-      
   <div style="width: 100%;">
     <v-card
       flat
@@ -10,21 +7,15 @@
       class="text-center"
       style="background-image: linear-gradient(to right, #212121, #212121);width:100%;"
     >
-      <div class="text-center">
-        <v-btn class="ma-2" outlined rounded color="#26C6DA">
-           <router-link to="/ContactUs">
+           <div class="text-center">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/contactus">
           Contact Us
-           </router-link>
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#26C6DA">
-        <router-link to="/Feedback">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/feedback">
           Feedback
-        </router-link>
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#26C6DA">
-          <router-link to="/FAQpage">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/FAQpage">
           FAQ
-          </router-link>
         </v-btn>
       </div>
 

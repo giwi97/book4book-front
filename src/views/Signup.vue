@@ -1,22 +1,37 @@
 <template>
     <v-content>
       <v-container class="fill-height" fluid 
-    style="height: 800px">
-      
+    style="height: 1000px">
     
       <v-row  justify="center"> 
         <v-col
       cols="12"
-      sm="10"
-      md="8"
-      lg="6"
-    >      
+      sm="10">      
+
+<v-card
+    class="mx-auto"
+    color="#651FFF"
+    dark
+    max-height="1000"
+    max-width="1000"
+  >
+  <v-card-title class="headline font-weight-bold blue-grey white--text">
+      CREATE ACCOUNT
+    </v-card-title>
+    <v-divider
+      class="mx-4"
+      vertical
+    ></v-divider>
+    
   <v-form
     ref="form"
     v-model="valid"
     lazy-validation
   >
- 
+     <v-col
+     md="10"
+        offset-md="1">     
+
     <v-text-field
       v-model="name"
       
@@ -83,6 +98,11 @@
       label="Do you agree?"
       required
     ></v-checkbox>
+     </v-col>
+  <v-divider
+      class="mx-4"
+      vertical
+    ></v-divider>
 
       <v-col
         md="10"
@@ -97,12 +117,12 @@
       Submit
     </v-btn>
 
-    <v-btn
+   <v-btn
       color="error"
       class="mr-4"
-      @click="Reset"
+      @click="reset"
     >
-      Reset
+      clear
     </v-btn>
       </v-col>
       <v-divider
@@ -110,15 +130,16 @@
       vertical
     ></v-divider>
 
+
   <v-col
     md="10"
-    offset-md="2">
+    offset-md="3">
         <v-btn
           v-for="icon in icons"
           :key="icon"
           class="mx-8"
           dark
-          color="primary"
+          color="#FFFFFF"
           icon >
 
           <v-icon size="50px">
@@ -129,7 +150,7 @@
   </v-col>
 
       </v-form>
-      
+</v-card>
         </v-col>
     </v-row>
       </v-container>
@@ -175,7 +196,7 @@
       submit () {
         this.$refs.form.submit()
       },
-      reset () {
+     reset () {
         this.$refs.form.reset()
       },
     },
