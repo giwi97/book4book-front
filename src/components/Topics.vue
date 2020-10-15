@@ -23,7 +23,9 @@
         rounded
         text
       >
+        <router-link to="/ebookgroup">
         View
+       </router-link>
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -106,7 +108,9 @@
         rounded
         text
       >
+       <router-link to="/ebookgroup">
         View
+       </router-link>
       </v-btn>
     </v-card-actions>
   </v-card>

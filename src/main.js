@@ -20,6 +20,18 @@ import ContactUs from "./views/ContactUs";
 import BookCategory from "./views/BookCategory";
 
 
+
+import EbookGroup from "./views/EbookGroup";
+
+
+
+import EbookGroup from "./views/EbookGroup";
+
+
+import BookCategory from "./views/BookCategory";
+
+
+
 Vue.use(VueRouter);
 
 import "./scss/main.scss";
@@ -40,7 +52,21 @@ const router = new VueRouter({
     { path: "/login", component: Login },
     { path: "/feedback", component: Feedback},
     { path: "/contactus", component: ContactUs},
+
     { path: "/BookCategory", component: BookCategory },
+
+
+
+
+    { path: "/ebookgroup", component: EbookGroup},
+
+
+    { path: "/BookCategory", component: BookCategory },
+
+
+
+
+
   ],
 });
 
@@ -48,4 +74,5 @@ new Vue({
   router,
   vuetify,
   render: (h) => h(App),
+
 }).$mount("#app");
