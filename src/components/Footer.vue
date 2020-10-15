@@ -1,20 +1,7 @@
 <template>
-
   <v-container>
     <v-footer padless>
-      <v-card flat tile class="text-center">
-        <div class="text-center">
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
-          <router-link to="/contactus">Contact Us</router-link>
-          </v-btn>
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
-          <router-link to="/feedback">Feedback</router-link>  
-          </v-btn>
-          <v-btn class="ma-2" outlined rounded color="#26c6da">
-            FAQ
-          </v-btn>
-        </div>
-
+      
   <div style="width: 100%;">
     <v-card
       flat
@@ -25,13 +12,19 @@
     >
       <div class="text-center">
         <v-btn class="ma-2" outlined rounded color="#26C6DA">
+           <router-link to="/ContactUs">
           Contact Us
+           </router-link>
         </v-btn>
         <v-btn class="ma-2" outlined rounded color="#26C6DA">
+        <router-link to="/Feedback">
           Feedback
+        </router-link>
         </v-btn>
         <v-btn class="ma-2" outlined rounded color="#26C6DA">
+          <router-link to="/FAQpage">
           FAQ
+          </router-link>
         </v-btn>
       </div>
 
@@ -51,6 +44,8 @@
       </v-card-text>
     </v-card>
   </div>
+  </v-footer>
+  </v-container>
 </template>
 
 <script>

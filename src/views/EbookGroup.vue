@@ -1,21 +1,19 @@
 <template>
   <v-main>
-    <h1>Group - eBook Readers</h1>
-    <br />
-    <v-spacer></v-spacer>
+    <div class="block latestPostBlock">
+    <h2 class="text-center">Groups - eBook Readers</h2>
+    </div>
+      
+    <GroupPost />
     
-
     <AddPost />
     <br>
-    <GroupPost />
-
-    <br />
 
     <template>
       <div class="text-center">
         <v-pagination
           v-model="page"
-          :length="4"
+          :length="1"
           prev-icon="mdi-menu-left"
           next-icon="mdi-menu-right"
         ></v-pagination>

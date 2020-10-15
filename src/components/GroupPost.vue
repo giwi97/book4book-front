@@ -1,9 +1,25 @@
 <template>
+
   <v-container>
-    <v-card class="mx-auto" max-width="1250">
+   
+      
+    <v-card class="mx-auto pink lighten-5" max-width="1250">
+     
       <v-card-text>
+        <v-row>
+         <v-list-item-avatar color="grey darken-3">
+          <v-img
+            class="elevation-6"
+            alt=""
+            src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+          ></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>Evan You</v-list-item-title>
+        </v-list-item-content>
         <div class="text-right">02/10/2020</div>
-        <p class="subtitle-1 font-weight-bold text--primary">Harry</p>
+        </v-row>
         <p class="subtitle-2 font-weight-bold">Subject : Introduction</p>
         <p class="subtitle-2 font-weight-bold">Description :</p>
         <div class="text--primary">Hello Everyone!</div>
@@ -18,9 +34,12 @@
       <div v-show="show">
         <v-divider></v-divider>
 
-        <v-card-text>
-          I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-        </v-card-text>
+        <v-text-field
+            label="Reply"
+            filled
+            rounded
+            dense
+          ></v-text-field>
       </div>
     </v-expand-transition>
       
@@ -28,11 +47,20 @@
 
     <br />
 
-    <v-card class="mx-auto" max-width="1250">
+    <v-card class="mx-auto pink lighten-5" max-width="1250">
       <v-card-text>
-        <div class="text-right">02/10/2020</div>
+        <v-row>
+         <v-list-item-avatar color="grey darken-3">
+          <span class="white--text headline">CJ</span>
+        </v-list-item-avatar>
 
-        <p class="subtitle-1 font-weight-bold text--primary">Harry</p>
+        <v-list-item-content>
+          <v-list-item-title>Christ J</v-list-item-title>
+        </v-list-item-content>
+        <div class="text-right">02/10/2020</div>
+        
+        </v-row>
+
         <p class="subtitle-2 font-weight-bold">Subject : Introduction</p>
         <p class="subtitle-2 font-weight-bold">Description :</p>
         <div class="text--primary">Hello Everyone!</div>
@@ -47,13 +75,12 @@
       <div v-show="show">
         <v-divider></v-divider>
 
-        <v-card-text>
-          I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-        </v-card-text>
+     
       </div>
     </v-expand-transition>
      
     </v-card>
+    
   </v-container>
   
 </template>

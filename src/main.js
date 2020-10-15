@@ -18,17 +18,10 @@ import Signup from "./views/Signup";
 import Feedback from "./views/Feedback";
 import ContactUs from "./views/ContactUs"; 
 import BookCategory from "./views/BookCategory";
-
-
-
 import EbookGroup from "./views/EbookGroup";
+import FAQpage from "./views/FAQpage";
 
 
-
-import EbookGroup from "./views/EbookGroup";
-
-
-import BookCategory from "./views/BookCategory";
 
 
 
@@ -52,16 +45,11 @@ const router = new VueRouter({
     { path: "/login", component: Login },
     { path: "/feedback", component: Feedback},
     { path: "/contactus", component: ContactUs},
-
     { path: "/BookCategory", component: BookCategory },
-
-
-
-
     { path: "/ebookgroup", component: EbookGroup},
+    { path: "/faqpage", component: FAQpage},
 
-
-    { path: "/BookCategory", component: BookCategory },
+   
 
 
 

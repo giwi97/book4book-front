@@ -5,6 +5,9 @@
     class="mx-auto"
     max-width="344"
     outlined
+    color="yellow lighten-3"
+    shaped
+    elevation="8"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -18,15 +21,18 @@
     </v-list-item>
 
     <v-card-actions>
+       <v-row align="end" justify-md="end">
       <v-btn
         outlined
         rounded
-        text
+        text 
+              
       >
         <router-link to="/ebookgroup">
         View
        </router-link>
       </v-btn>
+       </v-row>
     </v-card-actions>
   </v-card>
 <br>
@@ -35,6 +41,9 @@
     class="mx-auto"
     max-width="344"
     outlined
+    color="pink lighten-4"
+    shaped
+    elevation="8"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -48,13 +57,16 @@
     </v-list-item>
 
     <v-card-actions>
+      <v-row align="end" justify-md="end">
       <v-btn
         outlined
         rounded
         text
+
       >
         View
       </v-btn>
+      </v-row>
     </v-card-actions>
   </v-card>
     </v-col>
@@ -63,6 +75,9 @@
     class="mx-auto"
     max-width="344"
     outlined
+    color="deep-purple lighten-3"
+    shaped
+    elevation="8"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -75,6 +90,7 @@
     </v-list-item>
 
     <v-card-actions>
+      <v-row align="end" justify-md="end">
       <v-btn
         outlined
         rounded
@@ -82,6 +98,7 @@
       >
         View
       </v-btn>
+      </v-row>
     </v-card-actions>
   </v-card>
 
@@ -91,6 +108,9 @@
     class="mx-auto"
     max-width="344"
     outlined
+    color="light-blue lighten-3"
+    shaped
+    elevation="8"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -103,6 +123,7 @@
     </v-list-item>
 
     <v-card-actions>
+      <v-row align="end" justify-md="end">
       <v-btn
         outlined
         rounded
@@ -112,6 +133,7 @@
         View
        </router-link>
       </v-btn>
+      </v-row>
     </v-card-actions>
   </v-card>
     
@@ -123,6 +145,9 @@
     class="mx-auto"
     max-width="344"
     outlined
+    color="teal lighten-3"
+    shaped
+    elevation="8"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -134,13 +159,15 @@
     </v-list-item>
 
     <v-card-actions>
+      <v-row align="end" justify-md="end">
       <v-btn
         outlined
         rounded
         text
-      >
+        >
         View
       </v-btn>
+      </v-row>
     </v-card-actions>
   </v-card>
     
