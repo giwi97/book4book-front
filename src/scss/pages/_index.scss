@@ -54,3 +54,14 @@
 .text-center {
   margin: auto;
 }
+
+//scroll progress bar
+
+.line {
+  background: aqua;
+  height: 8px;
+  border-radius: 4px;
+  width: 0%;
+  position: fixed;
+  top: 0px;
+}
