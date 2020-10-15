@@ -31,8 +31,13 @@
           </v-btn>
         </div>
       </v-app-bar>
-      <v-navigation-drawer v-model="drawer" absolute temporary height="800">
-
+      <v-navigation-drawer
+        v-model="drawer"
+        absolute
+        temporary
+        height="800"
+        width="25%"
+      >
         <v-list nav>
           <v-list-item-group
             v-model="group"
@@ -55,17 +60,25 @@
             <!-- </v-col> -->
             <!-- </v-form> -->
             <br />
+
+<v-divider></v-divider>
+            <router-link to="/login">
+              <v-list-item>
+                <h4 style="font-weight:bold;margin-left:10%;">Login/Register</h4>
+              </v-list-item>
+            </router-link>
+
             <v-divider></v-divider>
             <router-link to="/">
               <v-list-item>
-                <h4 style="font-weight:bold;">Home</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">Home</h4>
               </v-list-item>
             </router-link>
             <v-divider></v-divider>
 
             <router-link to="/bookrequest">
               <v-list-item>
-                <h4 style="font-weight:bold;">Book Request</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">Book Request</h4>
               </v-list-item>
             </router-link>
 
@@ -73,7 +86,22 @@
 
             <router-link to="/bookoffers">
               <v-list-item>
-                <h4 style="font-weight:bold;">Book Offers</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">Book Offers</h4>
+              </v-list-item>
+            </router-link>
+
+            <v-divider></v-divider>
+            <router-link to="/AddBook">
+              <v-list-item>
+                <h4 style="font-weight:bold;margin-left:10%;">Add Book</h4>
+              </v-list-item>
+            </router-link>
+
+            <v-divider></v-divider>
+
+            <router-link to="/BookCategory">
+              <v-list-item>
+                <h4 style="font-weight:bold;margin-left:10%;">Categories</h4>
               </v-list-item>
             </router-link>
 
@@ -81,7 +109,7 @@
 
             <router-link to="/events">
               <v-list-item>
-                <h4 style="font-weight:bold;">Events</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">Events</h4>
               </v-list-item>
             </router-link>
 
@@ -89,7 +117,7 @@
 
             <router-link to="/members">
               <v-list-item>
-                <h4 style="font-weight:bold;">Members</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">Members</h4>
               </v-list-item>
             </router-link>
 
@@ -97,7 +125,7 @@
 
             <router-link to="/groups">
               <v-list-item>
-                <h4 style="font-weight:bold;">Groups</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">Groups</h4>
               </v-list-item>
             </router-link>
 
@@ -105,7 +133,7 @@
 
             <router-link to="/howitworks">
               <v-list-item>
-                <h4 style="font-weight:bold;">How it works</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">How it works</h4>
               </v-list-item>
             </router-link>
 
@@ -113,7 +141,7 @@
 
             <router-link to="/aboutus">
               <v-list-item>
-                <h4 style="font-weight:bold;">About Us</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">About Us</h4>
               </v-list-item>
             </router-link>
 
@@ -129,5 +157,10 @@
 export default {
   name: "Header",
   data: () => ({ drawer: null, group: null }),
+  watch: {
+      group () {
+        this.drawer = false
+      },
+    },
 };
 </script>

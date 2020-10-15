@@ -1,6 +1,6 @@
 <template>
   <v-content>
-        <div class="staticHero">
+    <div class="staticHero">
       <v-img max-height="150" src="../assets/images/ggg.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
           <v-col>
@@ -14,16 +14,9 @@
     <v-container class="fill-height" fluid style="height: 900px">
       <v-row justify="center">
         <v-col cols="12" sm="10">
-          <v-card
-            class="mx-auto"
-            light
-            max-height="1000"
-            max-width="850"
-          >
-            <div id="loginF"
-              style="color:white;font-weight:bold;"
-            >
-              LOGIN
+          <v-card class="mx-auto" light max-height="1000" max-width="850">
+            <div id="loginF" style="color:white;font-weight:bold;">
+              Login
             </div>
             <v-divider class="mx-4" vertical></v-divider>
 
@@ -51,7 +44,9 @@
 
                 <v-divider class="mx-4" vertical></v-divider>
 
-                <router-link to="/Signup"><h4>Forgot Password ?</h4></router-link>
+                <router-link to="/Signup"
+                  ><h4>Forgot Password ?</h4></router-link
+                >
               </v-col>
               <v-divider class="mx-4" vertical></v-divider>
 
@@ -105,11 +100,11 @@
                 </v-btn>
               </v-col>
             </v-form>
-                    <v-progress-linear
-          color="cyan darken-2"
-          rounded
-          value="100"
-        ></v-progress-linear>
+            <v-progress-linear
+              color="cyan darken-2"
+              rounded
+              value="100"
+            ></v-progress-linear>
           </v-card>
         </v-col>
       </v-row>
