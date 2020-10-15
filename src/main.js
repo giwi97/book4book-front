@@ -18,6 +18,8 @@ import Signup from "./views/Signup";
 import Feedback from "./views/Feedback";
 import ContactUs from "./views/ContactUs"; 
 import BookCategory from "./views/BookCategory";
+import EbookGroup from "./views/EbookGroup";
+import FAQpage from "./views/FAQpage";
 import Editpro from "./views/Editpro";
 import TimeL from "./views/TimeL";
 import Profile from "./views/Profile";
@@ -46,12 +48,13 @@ const router = new VueRouter({
     { path: "/feedback", component: Feedback},
     { path: "/contactus", component: ContactUs},
     { path: "/BookCategory", component: BookCategory },
+    { path: "/ebookgroup", component: EbookGroup},
+    { path: "/faqpage", component: FAQpage},
     { path: "/Editpro", component: Editpro },
     { path: "/TimeL", component: TimeL },
     { path: "/Profile", component: Profile },
     { path: "/BookDetails", component: BookDetails }, 
     { path: "/AddBook", component: AddBook }, 
-
   ],
 });
 
@@ -59,4 +62,5 @@ new Vue({
   router,
   vuetify,
   render: (h) => h(App),
+
 }).$mount("#app");
