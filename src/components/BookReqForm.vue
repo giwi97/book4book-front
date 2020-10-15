@@ -160,10 +160,9 @@ export default {
       if (!this.errors) {
         if (!val) return;
         setTimeout(() => (this.dialog = false), 4000);
-        setTimeout(() => this.$router.push({ path: '/bookrequest'}), 4000);
-        
-      }else{
-        return false
+        setTimeout(() => this.$router.push({ path: "/bookrequest" }), 4000);
+      } else {
+        return false;
       }
       //this.$router.push("/login");
     },
