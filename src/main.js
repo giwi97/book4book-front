@@ -16,6 +16,8 @@ import AboutUs from "./views/AboutUs";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import BookCategory from "./views/BookCategory";
+import BookDetails from "./views/BookDetails";
+import AddBook from "./views/AddBook";
 
 Vue.use(VueRouter);
 
@@ -36,6 +38,8 @@ const router = new VueRouter({
     { path: "/signup", component: Signup },
     { path: "/login", component: Login },
     { path: "/BookCategory", component: BookCategory },
+    { path: "/BookDetails", component: BookDetails }, 
+    { path: "/AddBook", component: AddBook }, 
 
   ],
 });
