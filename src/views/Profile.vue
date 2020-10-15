@@ -1,4 +1,3 @@
-@@ -0,0 +1,122 @@
 <template>
   <v-container
     fluid
