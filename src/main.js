@@ -14,6 +14,9 @@ import AboutUs from "./views/AboutUs";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import BookCategory from "./views/BookCategory";
+import Editpro from "./views/Editpro";
+import TimeL from "./views/TimeL";
+import Profile from "./views/Profile";
 
 Vue.use(VueRouter);
 
@@ -34,7 +37,9 @@ const router = new VueRouter({
     { path: "/signup", component: Signup },
     { path: "/login", component: Login },
     { path: "/BookCategory", component: BookCategory },
-
+    { path: "/Editpro", component: Editpro },
+    { path: "/TimeL", component: TimeL },
+    { path: "/Profile", component: Profile },
   ],
 });
 
