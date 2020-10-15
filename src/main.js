@@ -2,6 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
+import VueSession from "vue-session";
+Vue.use(VueSession)
 
 import Home from "./views/Home";
 import BookRequest from "./views/BookRequest";
@@ -13,10 +15,15 @@ import HowItWorks from "./views/HowItWorks";
 import AboutUs from "./views/AboutUs";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
+import Feedback from "./views/Feedback";
+import ContactUs from "./views/ContactUs"; 
 import BookCategory from "./views/BookCategory";
 import Editpro from "./views/Editpro";
 import TimeL from "./views/TimeL";
 import Profile from "./views/Profile";
+import BookDetails from "./views/BookDetails";
+import AddBook from "./views/AddBook";
+
 
 Vue.use(VueRouter);
 
@@ -36,10 +43,15 @@ const router = new VueRouter({
     { path: "/aboutus", component: AboutUs },
     { path: "/signup", component: Signup },
     { path: "/login", component: Login },
+    { path: "/feedback", component: Feedback},
+    { path: "/contactus", component: ContactUs},
     { path: "/BookCategory", component: BookCategory },
     { path: "/Editpro", component: Editpro },
     { path: "/TimeL", component: TimeL },
     { path: "/Profile", component: Profile },
+    { path: "/BookDetails", component: BookDetails }, 
+    { path: "/AddBook", component: AddBook }, 
+
   ],
 });
 
