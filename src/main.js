@@ -1,4 +1,5 @@
 import Vue from "vue";
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
@@ -18,8 +19,11 @@ import Signup from "./views/Signup";
 import BookCategory from "./views/BookCategory";
 
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
 
 import "./scss/main.scss";
+
+
 
 Vue.config.productionTip = false;
 

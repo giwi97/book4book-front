@@ -16,7 +16,6 @@
           </v-btn>
         </div>
       </v-app-bar>
-
       <v-navigation-drawer v-model="drawer" absolute temporary height="800">
         <v-list nav>
           <v-list-item-group
