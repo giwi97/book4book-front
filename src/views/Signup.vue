@@ -51,7 +51,7 @@
 
    <v-text-field
       v-model="date"
-      :rules="emailRules"
+      :rules="dateRules"
       label="Birth Date"
       required
     ></v-text-field>
