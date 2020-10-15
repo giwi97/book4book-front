@@ -1,11 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar flat app color="white">
-    <Header />
+    <v-app-bar flat app color="#212121">
+      <Header />
     </v-app-bar>
-
+    <v-divider dark></v-divider>
     <router-view> </router-view>
 
+    <v-divider></v-divider>
     <Footer />
   </v-app>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="heroBlock">
-    <v-carousel hide-delimiters cycle>
+    <v-carousel hide-delimiters dark cycle height="700">
       <v-carousel-item
         v-for="(item, i) in items"
         :key="i"
