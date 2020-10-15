@@ -55,7 +55,6 @@
             <!-- </v-col> -->
             <!-- </v-form> -->
             <br />
-            <br />
             <v-divider></v-divider>
             <router-link to="/">
               <v-list-item>
