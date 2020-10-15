@@ -165,12 +165,7 @@
          Back to Profile
         </v-btn>
       
-      <v-btn
-      color="error"
-      class="mr-4" 
-       router-link to="/TimeL" >
-      Clear
-    </v-btn>
+    
     
     
       </v-timeline-item>
