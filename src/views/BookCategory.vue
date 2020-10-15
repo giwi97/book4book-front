@@ -1,219 +1,352 @@
 <template>
   <v-content>
-    <div style="margin-left: 8%; width: 92%">
-      Book Category<br />
-      <v-card style="float: left; width: 92%" class="mx-auto">
-        <div style="float: left; width: 220px">
-          <v-img
-            id="mainImage"
-            max-height="400"
-            max-width="200"
-            src="../assets/images/science.jpg"
-          ></v-img>
-          <v-img
-            id="Image1"
-            class="small_image"
-            max-height="100"
-            max-width="59.5"
-            src="../assets/images/science.jpg"
-          ></v-img>
-          <v-img
-            id="Image2"
-            class="small_image"
-            max-height="100"
-            max-width="59.5"
-            src="../assets/images/science.jpg"
-          ></v-img>
-          <v-img
-            id="Image3"
-            class="small_image"
-            max-height="100"
-            max-width="59.5"
-            src="../assets/images/science.jpg"
-          ></v-img>
-        </div>
-        <div style="float: left; width: 74%; margin-left: 30px" class="v-row">
-          <h1>
-            <b>
-              Science and Technology for Civil Services Preliminary and Main
-              Examinations</b
-            >
-          </h1>
-          <p>by Ravi P. Agrahari (Author)</p>
-          <v-img
-            style="float: left"
-            id="Image3"
-            max-width="80"
-            src="../assets/images/ratings.png"
-          ></v-img>
-          <span style="float: left; margin-top: -5px; margin-left: 10px">
-            88 ratings</span
+    <div style="margin-left: 1%; width: 100%; padding: 20px 0px 20px 0px">
+      <div style="float: left; width: 17%">
+        <v-card style="margin-right: 10px">
+          <div id="categoryHead">Popular Categories</div>
+
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Art & Architecture')"
           >
-          <v-progress-linear
-            color="cyan darken-2"
-            rounded
-            value="100"
-          ></v-progress-linear
-          >vue
-          <br />
-          <h3>Rs. 2500.00/=</h3>
-          <v-btn outlined rounded text style="float: right; margin-right: 50px">
-            Book Now
+            Art & Architecture
           </v-btn>
-          <p style="margin-top: -20px">(Inclusive of all taxes)</p>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Biography & True Stories')"
+          >
+            Biography & True Stories
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Literature & literary studies')"
+          >
+            Literature & literary studies
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Lifestyle, sport & leisure')"
+          >
+            Lifestyle, sport & leisure
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Children & educational')"
+          >
+            Children's & educational
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Economics, business & management')"
+          >
+            Business & management
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Fiction & related items')"
+          >
+            Fiction & related items
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('Health & personal development')"
+          >
+            Health & personal development
+          </v-btn>
+        </v-card>
+        <v-card style="margin-right: 10px; margin-top: 10px">
+          <div id="categoryHead">Popular Authors</div>
 
-          <p style="color: green">In Stock</p>
-          <label>Quantity</label>
-          <input
-            type="number"
-            value="1"
-            :rules="rules"
-            hide-details="auto"
-            style="width: 55px; margin-left: 15px"
-          />
-        </div>
-        <br />
-        <div
-          style="width: 96%; margin-top: 20px; margin-left: 10px; float: left"
-        >
-          <p class="text-justify">
-            Science and Technology is one of the most dynamic subjects in the
-            UPSC examination. In recent years, UPSC is emphasising on dynamic
-            cum analytical aspect of science and Technology. Keeping this in
-            mind and aligned as per the examination trends, the fourth edition
-            of science and Technology has been thoroughly revised to suit the
-            needs of students appearing for UPSC Preliminary and Main
-            examination. This book delves into important aspect of the
-            examination In detail, providing aspirants with a ready-made
-            amalgamation of basic concepts intertwined with recent developments
-            in the various fields making it easier for students from non-science
-            background to comprehend and retain.
-          </p>
-        </div>
-        <v-progress-linear
-          color="cyan darken-2"
-          rounded
-          value="100"
-        ></v-progress-linear>
-        <h3>Related Books</h3>
-        <div id="relateditemlist">
-          <div id="relatedItemgroup">
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-          </div>
-        </div>
-        <v-progress-linear
-          color="cyan darken-2"
-          rounded
-          value="100"
-        ></v-progress-linear>
-        <h3>Customer Reviews</h3>
-        <table id="reviewTable" v-html="test"></table>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('ALYSON NOEL')"
+          >
+            ALYSON NOEL
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('AMANDA HOCKING')"
+          >
+            AMANDA HOCKING
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('DAN BROWN')"
+          >
+            DAN BROWN
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('DANIELLE STEEL')"
+          >
+            DANIELLE STEEL
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('JAMES PATTERSON')"
+          >
+            JAMES PATTERSON
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('JEFFREY ARCHER')"
+          >
+            JEFFREY ARCHER
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('JOHN GREEN')"
+          >
+            JOHN GREEN
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('JOHN GRISHAM')"
+          >
+            JOHN GRISHAM
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('NORA ROBERTS')"
+          >
+            NORA ROBERTS
+          </v-btn>
+          <v-btn
+            x-small
+            color="teal"
+            dark
+            class="categorybtn"
+            @click="selecCat('STEPHEN KING')"
+          >
+            STEPHEN KING
+          </v-btn>
+        </v-card>
+      </div>
+      <v-card
+        id="categoryHead"
+        style="float: left; width: 80%; height: 50px; margin: 0px 0px 10px 0px"
+      >
+        <span>{{ btnText }}</span>
+      </v-card>
+      <v-card
+        style="float: left; width: 80%; margin-bottom: 20px"
+        class="mx-auto"
+        id="bookContainer"
+      >
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
 
-        <v-text-field id="reviewText" label="Write Your Review"></v-text-field>
-        <v-btn
-          id="submitbtn"
-          rounded
-          color="cyan darken-2"
-          dark
-          @click="SetReview()"
-        >
-          SUBMIT
-        </v-btn>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images" src="../assets/images/science.jpg">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
       </v-card>
     </div>
   </v-content>
@@ -227,33 +360,50 @@ export default {
     return {
       items: [],
       ReviewArray: [],
+      btnText: "All Category",
 
       reviewText: this.reviewText,
     };
   },
-  mounted: function () {
-    this.apendreview();
+
+  mounted() {
+    // this.getBook();
   },
   methods: {
-    selectitem: function () {
-      alert();
+    selecCat(a) {
+      this.btnText = a;
     },
-    SetReview: function () {
-      this.ReviewArray.push(
-        '<tr> <ul><li><label class="R_Name">Harshit Sharma</label></li></ul><label class="R_details">' +
-          document.getElementById("reviewText").value +
-          "</label></tr>"
-      );
+    getBook: function () {
+      var bookss = JSON.parse(localStorage.getItem("BookList"));
 
-      this.$session.set("Addreview", this.ReviewArray);
-      document.getElementById("reviewText").value = "";
-      this.apendreview();
-    },
-    apendreview: function () {
-      var ReviewArraynext = this.$session.get("Addreview");
-      for (var key in ReviewArraynext) {
-        document.getElementById("reviewTable").insertRow(0).innerHTML =
-          ReviewArraynext[key];
+      for (var len in bookss) {
+        // alert(bookss[len].location);
+        // alert(bookss[len].Name);
+        // alert(bookss[len].price);
+        // alert(bookss[len].description);
+
+        // var img = document.createElement('img')
+        // img.setAttribute("src", bookss[len].location);
+        // document.getElementById('bookContainer').appendChild( "<v-img class=\"images\" src="+bookss[len].location+">");
+
+        document.getElementById("bookContainer").innerHTML +=
+          '<a @click="getDetails()" href="http://localhost:8080/#/BookDetails">\n\
+          <v-hover v-slot:default="{ hover }">\n\
+            <v-img class="images" src="' +
+          bookss[len].location +
+          '">\n\
+              <v-expand-transition>\n\
+                <div v-if="hover" class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text" style="height: 100%; opacity: 90%">\n\
+                  <label class="BookName">"' +
+          bookss[len].Name +
+          '"<br /><br /><b> "' +
+          bookss[len].price +
+          '"=</b></label>\n\
+                </div>\n\
+              </v-expand-transition>\n\
+            </v-img>\n\
+          </v-hover>\n\
+        </a>';
       }
     },
   },
@@ -261,74 +411,49 @@ export default {
 </script>
 
 <style >
-.small_image {
-  margin-top: 10px;
+.images {
+  margin-top: 50px;
   float: left;
-  margin-right: 10px;
+  margin-right: 29px;
+  margin-left: 29px;
+  max-height: 350px;
+  max-width: 150px;
 }
-.related_image {
-  margin-top: 10px;
-  float: left;
-  margin-left: 31px;
-  margin-bottom: 15px;
-}
-.related_image:hover {
-  opacity: 50%;
-}
-#relateditemlist {
-  overflow: hidden;
-}
-#relatedItemgroup {
-  position: relative;
-  width: 1900px;
-  animation: myfirst 15s 2;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-@keyframes myfirst {
-  0% {
-    margin-left: -100px;
-  }
-  10% {
-    margin-left: -200px;
-  }
-  20% {
-    margin-left: -300px;
-  }
-  30% {
-    margin-left: -400px;
-  }
-  40% {
-    margin-left: -500px;
-  }
-  50% {
-    margin-left: -600px;
-  }
-  60% {
-    margin-left: -600px;
-  }
-  70% {
-    margin-left: -500px;
-  }
-  80% {
-    margin-left: -400px;
-  }
-  90% {
-    margin-left: -300px;
-  }
-  100% {
-    margin-left: -200px;
-  }
-}
-#submitbtn {
+.categorybtn {
   width: 100%;
 }
-.R_Name {
-  font-size: 15px;
+#categoryHead {
+  height: 45px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+}
+.btnView {
+  margin-top: 80px;
+  opacity: 100%;
+  width: 50px;
+  padding: 0px;
+}
+.item {
+  color: slategrey;
+  font-size: 25px;
+  margin-left: 45px;
+  float: left;
+  /* margin-top: 100px; */
+}
+.BookName {
+  font-size: 14px;
+  color: teal;
+  margin-left: 5px;
+  margin-right: 5px;
+  line-height: 20px;
+  margin-top: 15px;
+  text-align: center;
+  float: left;
+  opacity: 100%;
   font-weight: bold;
 }
-.R_details {
-  margin-left: 30px;
-}
-/* jhdcjch */
 </style>
