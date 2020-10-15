@@ -7,15 +7,15 @@
             <v-btn
               outlined
               class="mr-4"
-              color="grey darken-2"
+              color="indigo darken-2"
               @click="setToday"
             >
               Today
             </v-btn>
-            <v-btn fab text small color="grey darken-2" @click="prev">
+            <v-btn fab text small color="blue darken-2" @click="prev">
               <v-icon small> mdi-chevron-left </v-icon>
             </v-btn>
-            <v-btn fab text small color="grey darken-2" @click="next">
+            <v-btn fab text small color="blue darken-2" @click="next">
               <v-icon small> mdi-chevron-right </v-icon>
             </v-btn>
             <v-toolbar-title v-if="$refs.calendar">
@@ -24,7 +24,7 @@
             <v-spacer></v-spacer>
             <v-menu transition="fab-transition" bottom right>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn outlined color="grey darken-2" v-bind="attrs" v-on="on">
+                <v-btn outlined color="blue darken-2" v-bind="attrs" v-on="on">
                   <span>{{ typeToLabel[type] }}</span>
                   <v-icon right> mdi-menu-down </v-icon>
                 </v-btn>
@@ -65,7 +65,7 @@
             :activator="selectedElement"
             offset-x
           >
-            <v-card color="grey lighten-2" min-width="350px" flat>
+            <v-card color="blue lighten-2" min-width="350px" flat>
               <v-toolbar :color="selectedEvent.color" dark>
                 <v-btn icon>
                   <v-icon>mdi-pencil</v-icon>
