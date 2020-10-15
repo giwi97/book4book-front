@@ -1,7 +1,10 @@
 <template>
-  <div class="navi-bar" style="background-image: linear-gradient(to right, #C04848, #480048);">
+  <div
+    class="navi-bar"
+    style="background-image: linear-gradient(to right, #FF512F, #DD2476);"
+  >
     <v-container>
-      <v-row >
+      <v-row>
         <v-col cols="12" class="py-2">
           <v-btn-toggle v-model="text" tile color="white accent-3" group>
             <v-btn to="/">
@@ -9,7 +12,7 @@
             </v-btn>
 
             <v-btn to="/bookrequest">
-             <span style="color:#FFB300;"> Book Request</span>
+              <span style="color:#FFB300;"> Book Request</span>
             </v-btn>
 
             <v-btn to="/bookoffers">
@@ -17,15 +20,15 @@
             </v-btn>
 
             <v-btn to="/events">
-             <span style="color:#FFB300;"> Events</span>
+              <span style="color:#FFB300;"> Events</span>
             </v-btn>
 
             <v-btn to="/members">
-             <span style="color:#FFB300;"> Members</span>
+              <span style="color:#FFB300;"> Members</span>
             </v-btn>
 
             <v-btn to="/groups">
-             <span style="color:#FFB300;"> Groups</span>
+              <span style="color:#FFB300;"> Groups</span>
             </v-btn>
 
             <v-btn to="/howitworks">
@@ -33,7 +36,7 @@
             </v-btn>
 
             <v-btn to="/aboutus">
-             <span style="color:#FFB300;"> About Us</span>
+              <span style="color:#FFB300;"> About Us</span>
             </v-btn>
           </v-btn-toggle>
         </v-col>
