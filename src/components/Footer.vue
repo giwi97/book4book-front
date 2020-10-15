@@ -7,14 +7,14 @@
       class="text-center"
       style="background-image: linear-gradient(to right, #212121, #212121);width:100%;"
     >
-      <div class="text-center">
+           <div class="text-center">
         <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/contactus">
           Contact Us
         </v-btn>
         <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/feedback">
           Feedback
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#26C6DA">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/FAQpage">
           FAQ
         </v-btn>
       </div>
@@ -35,6 +35,8 @@
       </v-card-text>
     </v-card>
   </div>
+  </v-footer>
+  </v-container>
 </template>
 
 <script>

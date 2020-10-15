@@ -1,16 +1,25 @@
 <template>
   <v-content>
-    <h1>Feedback</h1>
+    <div class="block latestPostBlock">
+    <h2 class="text-center">Feedback</h2>
+     </div> 
     <br>
-    <h5> Give us your feedback or our Website</h5>
+    <h5 class="text-center"> Give us your feedback or our Website</h5>
+    
+    <p class="text-center">Please fill out this feedback form. Your feedback help us to give best quality experience to all of our members.</p> 
     <br>
-    <p>Please fill out this feedback form. Your feedback help us to give best quality experience to all of our members.</p> 
+    <br>  
       <Survey />
     <br>
-    <h1>Add your Review</h1>
+    <br>
+    <br>
+     <div class="block latestPostBlock">
+    <h2 class="text-center">Add your Review</h2>
+     </div>
     <br>
       <Rate />
-    <br>  
+    <br> 
+   
   </v-content>
 </template>
 
