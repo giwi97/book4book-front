@@ -1,20 +1,30 @@
 <template>
   <v-content>
+        <div class="staticHero">
+      <v-img max-height="150" src="../assets/images/ggg.jpg">
+        <v-row align="end" class="lightbox white--text pa-2 fill-height">
+          <v-col>
+            <v-container>
+              <div class="headline">Login</div>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-img>
+    </div>
     <v-container class="fill-height" fluid style="height: 900px">
       <v-row justify="center">
         <v-col cols="12" sm="10">
           <v-card
             class="mx-auto"
-            color="#651FFF"
-            dark
+            light
             max-height="1000"
             max-width="850"
           >
-            <v-card-title
-              class="headline font-weight-bold blue-grey hite--text"
+            <div id="loginF"
+              style="color:white;font-weight:bold;"
             >
               LOGIN
-            </v-card-title>
+            </div>
             <v-divider class="mx-4" vertical></v-divider>
 
             <v-form ref="form" v-model="valid" lazy-validation>
@@ -41,7 +51,7 @@
 
                 <v-divider class="mx-4" vertical></v-divider>
 
-                <router-link to="/Signup"><h4>Forget Password</h4></router-link>
+                <router-link to="/Signup"><h4>Forgot Password ?</h4></router-link>
               </v-col>
               <v-divider class="mx-4" vertical></v-divider>
 
@@ -95,6 +105,11 @@
                 </v-btn>
               </v-col>
             </v-form>
+                    <v-progress-linear
+          color="cyan darken-2"
+          rounded
+          value="100"
+        ></v-progress-linear>
           </v-card>
         </v-col>
       </v-row>
@@ -136,3 +151,15 @@ export default {
   },
 };
 </script>
+<style>
+#loginF {
+  height: 45px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  margin: -20px -11px 10px -11px;
+}
+</style>
