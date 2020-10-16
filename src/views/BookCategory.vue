@@ -180,13 +180,13 @@
         <span>{{ btnText }}</span>
       </v-card>
       <v-card
-        style="float: left; width: 80%; margin-bottom: 20px"
+        style="float: left; width: 80%; margin-bottom: 20px; padding-top: -0px"
         class="mx-auto"
         id="bookContainer"
       >
         <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
           <v-hover v-slot:default="{ hover }">
-            <v-img class="images" src="../assets/images/science.jpg">
+            <v-img class="images" src="../assets/images/10.jpg">
               <v-expand-transition>
                 <div
                   v-if="hover"
@@ -331,12 +331,12 @@
         </a>
         <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
           <v-hover v-slot:default="{ hover }">
-            <v-img class="images" src="../assets/images/science.jpg">
+            <v-img class="images">
               <v-expand-transition>
                 <div
                   v-if="hover"
                   class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
-                  style="height: 100%; opacity: 90%"
+                  style="height: 100%; opacity: 90%; cursor: pointer"
                 >
                   <label class="BookName"
                     >"Science and Technology for Civil Services Preliminary and
@@ -347,6 +347,97 @@
             </v-img>
           </v-hover>
         </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%; cursor: pointer"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%; cursor: pointer"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%; cursor: pointer"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%; cursor: pointer"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+         <a @click="getDetails()" href="http://localhost:8080/#/BookDetails">
+          <v-hover v-slot:default="{ hover }">
+            <v-img class="images">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                  style="height: 100%; opacity: 90%; cursor: pointer"
+                >
+                  <label class="BookName"
+                    >"Science and Technology for Civil Services Preliminary and
+                    Main Examinations"<br /><br /><b> "RS. 2500/="=</b></label
+                  >
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </v-hover>
+        </a>
+        <!-- <img v-for="img in imgSet" v-bind:key="img" :src="img.location" /> -->
       </v-card>
     </div>
   </v-content>
@@ -361,6 +452,8 @@ export default {
       items: [],
       ReviewArray: [],
       btnText: "All Category",
+      imgSet: JSON.parse(localStorage.getItem("BookList")),
+      img: 0,
 
       reviewText: this.reviewText,
     };
@@ -376,34 +469,15 @@ export default {
     getBook: function () {
       var bookss = JSON.parse(localStorage.getItem("BookList"));
 
-      for (var len in bookss) {
-        // alert(bookss[len].location);
-        // alert(bookss[len].Name);
-        // alert(bookss[len].price);
-        // alert(bookss[len].description);
+      alert(JSON.stringify(this.imgSet));
 
-        // var img = document.createElement('img')
-        // img.setAttribute("src", bookss[len].location);
-        // document.getElementById('bookContainer').appendChild( "<v-img class=\"images\" src="+bookss[len].location+">");
+      for (var len in bookss) {
+        var img = (document.getElementById("a").src =
+          "../assets/images/145.jpg");
+        document.getElementById("bookContainer").appendChild(img);
 
         document.getElementById("bookContainer").innerHTML +=
-          '<a @click="getDetails()" href="http://localhost:8080/#/BookDetails">\n\
-          <v-hover v-slot:default="{ hover }">\n\
-            <v-img class="images" src="' +
-          bookss[len].location +
-          '">\n\
-              <v-expand-transition>\n\
-                <div v-if="hover" class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text" style="height: 100%; opacity: 90%">\n\
-                  <label class="BookName">"' +
-          bookss[len].Name +
-          '"<br /><br /><b> "' +
-          bookss[len].price +
-          '"=</b></label>\n\
-                </div>\n\
-              </v-expand-transition>\n\
-            </v-img>\n\
-          </v-hover>\n\
-        </a>';
+          '<img class="images" src="' + bookss[len].location + '">';
       }
     },
   },
@@ -418,6 +492,7 @@ export default {
   margin-left: 29px;
   max-height: 350px;
   max-width: 150px;
+  cursor: pointer;
 }
 .categorybtn {
   width: 100%;
