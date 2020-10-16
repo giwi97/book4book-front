@@ -1,184 +1,97 @@
 <template>
-    <v-content>
-      <v-container class="fill-height" fluid 
-    style="height: 1200px">
-    
+  <v-content>
+      <v-container class="fill-height" fluid style="height: 1300px">
       <v-row  justify="center"> 
-        <v-col
-      cols="12"
-      sm="10">      
+        <v-col cols="12" sm="10">      
 
-<v-card
-    class="mx-auto"
-    color="#651FFF"
-    dark
-    max-height="1200"
-    max-width="1000"
-  >
-  <v-card-title class="headline font-weight-bold blue-grey white--text">
-     TIMELINE
-    </v-card-title>
-<v-divider
-      class="mx-4"
-      vertical
-    ></v-divider>
-<v-col
-        md="10"
-        offset-md="1">
- <v-timeline
-      dense
-      clipped
-    >
-      <v-timeline-item
-        fill-dot
-        class="white--text mb-12"
-        color="orange"
-        large
-      >
-        <template v-slot:icon>
-          <span>MO</span>
-        </template>
-        <v-text-field
-          v-model="input"
-          hide-details
-          flat
-          label="Leave a note..."
-          solo
-          @keydown.enter="comment"
-        >
-          <template v-slot:append>
-            <v-btn
-              class="mx-0"
-              depressed
-              @click="comment"
-            >
-              Post
-            </v-btn>
-          </template>
-        </v-text-field>
-      </v-timeline-item>
+      <v-card class="mx-auto" light max-height="1350" max-width="1000">
+             <div id="loginF" style="color:white;font-weight:bold;">
+              Create Account
+            </div>
+          <v-divider class="mx-4" vertical ></v-divider>
 
-      <v-slide-x-transition
-        group
-      >
-        <v-timeline-item
-          v-for="event in timeline"
-          :key="event.id"
-          class="mb-4"
-          color="pink"
-          small
-        >
+      
+        <v-col md="10" offset-md="1">       
+        <v-timeline dense clipped >
+          <v-timeline-item fill-dot class="white--text mb-12" color="orange" large >
+            <template v-slot:icon>
+              <span>MO</span>
+            </template>
+            <v-text-field v-model="input" hide-details flat label="Leave a note..." solo @keydown.enter="comment">
+            <template v-slot:append>
+              <v-btn class="mx-0" depressed @click="comment" >
+                  Post
+              </v-btn>
+            </template>
+          </v-text-field>
+        </v-timeline-item>
+        <v-slide-x-transition group >
+        <v-timeline-item v-for="event in timeline" :key="event.id" class="mb-4" color="pink" small>
           <v-row justify="space-between">
-            <v-col
-              cols="7"
-              v-text="event.text"
-            ></v-col>
-            <v-col
-              class="text-right"
-              cols="5"
-              v-text="event.time"
-            ></v-col>
+            <v-col cols="7" v-text="event.text"></v-col>
+            <v-col class="text-right" cols="5" v-text="event.time"></v-col>
           </v-row>
         </v-timeline-item>
-      </v-slide-x-transition>
+        </v-slide-x-transition>
 
-      <v-timeline-item
-        class="mb-6"
-        hide-dot
-      >
-        <span>TODAY</span>
-      </v-timeline-item>
-
-      <v-timeline-item
-        class="mb-4"
-        color="grey"
-        icon-color="grey lighten-2"
-        small
-      >
+        <v-timeline-item class="mb-6" hide-dot>
+           <span>TODAY</span>
+        </v-timeline-item>
+        <v-timeline-item class="mb-4" color="grey" icon-color="grey lighten-2" small>
         <v-row justify="space-between">
-          <v-col cols="7">
-            This order was archived.
-          </v-col>
-          <v-col
-            class="text-right"
-            cols="5"
-          >
+            <v-col cols="7">
+              This order was archived.
+            </v-col>
+            <v-col class="text-right" cols="5">
             15:26 EDT
           </v-col>
         </v-row>
-      </v-timeline-item>
+        </v-timeline-item>
 
-      <v-timeline-item
-        class="mb-4"
-        small
-      >
+        <v-timeline-item class="mb-4" small>
         <v-row justify="space-between">
           <v-col cols="7">
-            <v-chip
-              class="white--text ml-0"
-              color="purple"
-              label
-              small
-            >
+            <v-chip class="white--text ml-0" color="purple" label small >
               APP
             </v-chip>
             Digital Downloads fulfilled 1 item.
           </v-col>
-          <v-col
-            class="text-right"
-            cols="5"
-          >
+          <v-col  class="text-right"  cols="5"  >
             15:25 EDT
           </v-col>
         </v-row>
-      </v-timeline-item>
+        </v-timeline-item>
 
-      <v-timeline-item
-        class="mb-4"
-        color="grey"
-        small
-      >
+      <v-timeline-item  class="mb-4" color="grey"  small>
         <v-row justify="space-between">
           <v-col cols="7">
             Order confirmation email was sent to John Leider (john@vuetifyjs.com).
           </v-col>
-          <v-col
-            class="text-right"
-            cols="5"
-          >
+          <v-col  class="text-right" cols="5" >
             15:25 EDT
           </v-col>
         </v-row>
       </v-timeline-item>
 
-      <v-timeline-item
-        class="mb-4"
-        hide-dot >
-
-
-        
-        <v-btn
-        color="primary"
-          class="mr-4" 
-           router-link to="/Profile">
-
+      <v-timeline-item class="mb-4" hide-dot >
+        <v-btn color="primary" class="mr-4"  router-link to="/Profile">
          Back to Profile
         </v-btn>
-      
-    
-    
-    
+
+        <v-btn color="error" class="mr-4" @click="reset">
+            clear
+        </v-btn>
       </v-timeline-item>
+      </v-timeline>
+      </v-col>
 
-
-    </v-timeline>
-
-</v-col>
-    </v-card>
-        </v-col>
-    </v-row>
-      </v-container>
-    </v-content>
+      <v-progress-linear color="cyan darken-2" rounded value="100" ></v-progress-linear>
+       
+      </v-card>
+     </v-col>
+      </v-row>
+    </v-container>
+  </v-content>
 </template>
 
 
@@ -198,6 +111,11 @@
    
     
     methods: {
+
+      reset() {
+      this.comment = ''
+      this.$refs.form.reset();
+    },
       comment () {
         const time = (new Date()).toTimeString()
         this.events.push({

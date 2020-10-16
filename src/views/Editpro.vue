@@ -1,213 +1,70 @@
 <template>
     <v-content>
-      <v-container class="fill-height" fluid 
-    style="height: 1250px">
-    
+      <v-container class="fill-height" fluid style="height: 1350px">
       <v-row  justify="center"> 
-        <v-col
-      cols="12"
-      sm="10">      
+        <v-col cols="12" sm="10">      
 
-<v-card
-    class="mx-auto"
-    color="#651FFF"
-    dark
-    max-height="1200"
-    max-width="1000"
-  >
-  <v-card-title class="headline text-center font-weight-bold blue-grey white--text">
-      EDIT PROFILE
-    </v-card-title>
-    <v-divider
-            vertical
-    ></v-divider>
-    <v-col
-        md="10"
-        offset-md="4">
-        <v-avatar
-            class="profile"
-            size="200"
-             color="grey"
-            margin-top="50px">
+      <v-card class="mx-auto" light max-height="1250" max-width="1000">
+             <div id="loginF" style="color:white;font-weight:bold;">
+              Create Account
+            </div>
+          <v-divider vertical ></v-divider>
+         <v-col md="10" offset-md="4">
+        <v-avatar class="profile" color="grey" size="200" margin-top="50px">
             <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
-            
           </v-avatar>
-</v-col>
-<v-divider
-            vertical
-    ></v-divider>
+        </v-col>
+          <v-divider vertical ></v-divider>
 
-  <validation-observer
-    ref="observer"
-    v-slot="">
+        <validation-observer  ref="observer" v-slot="">
+          <v-form ref="form" v-model="valid" lazy-validation >
+          <v-col md="10" offset-md="1">     
 
-  <v-form
-    ref="form"
-    v-model="valid"
-    lazy-validation
-  >
-     <v-col
-     md="10"
-        offset-md="1">     
+        <validation-provider v-slot="{ errors }" name="FName" rules="required|max:10"  >
+            <v-text-field v-model="fname" :counter="10" :error-messages="errors" label="First Name" required ></v-text-field>
+         </validation-provider>
 
-   
-        <validation-provider
-        v-slot="{ errors }"
-        name="FName"
-        rules="required|max:10"  >
-        <v-text-field
-          v-model="fname"
-          :counter="10"
-          :error-messages="errors"
-          label="First Name"
-          required
-        ></v-text-field>
+      <validation-provider v-slot="{ errors }" name="LName" rules="required|max:10"  >
+        <v-text-field v-model="lname" :counter="10" :error-messages="errors" label="Last Name" required ></v-text-field>
       </validation-provider>
 
-      <validation-provider
-        v-slot="{ errors }"
-        name="LName"
-        rules="required|max:10"  >
-        <v-text-field
-          v-model="lname"
-          :counter="10"
-          :error-messages="errors"
-          label="Last Name"
-          required
-        ></v-text-field>
-      </validation-provider>
+       <v-menu ref="menu" v-model="menu" :close-on-content-click="false" transition="scale-transition" offset-y min-width="290px">
+          <template v-slot:activator="{ on, attrs }">
+              <v-text-field v-model="date" label="Birthday date" readonly v-bind="attrs" v-on="on" ></v-text-field>
+          </template>
+           <v-date-picker ref="picker" v-model="date" :max="new Date().toISOString().substr(0, 10)" min="1950-01-01" @change="save" ></v-date-picker>
+        </v-menu>
 
-        
-       <v-menu
-    ref="menu"
-    v-model="menu"
-    :close-on-content-click="false"
-    transition="scale-transition"
-    offset-y
-    min-width="290px"
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-text-field
-        v-model="date"
-        label="Birthday date"
-        readonly
-        v-bind="attrs"
-        v-on="on"
-      ></v-text-field>
-    </template>
-    <v-date-picker
-      ref="picker"
-      v-model="date"
-      :max="new Date().toISOString().substr(0, 10)"
-      min="1950-01-01"
-      @change="save"
-    ></v-date-picker>
-  </v-menu>
-        
+        <validation-provider v-slot="{ errors }" name="email" rules="required|email" >
+           <v-text-field v-model="email" :error-messages="errors" label="E-mail" required></v-text-field>
+        </validation-provider>
 
-      <validation-provider
-        v-slot="{ errors }"
-        name="email"
-        rules="required|email" >
-        <v-text-field
-          v-model="email"
-          :error-messages="errors"
-          label="E-mail"
-          required
-        ></v-text-field>
-      </validation-provider>
+        <validation-provider v-slot="{ errors }" name="telephone" rules="required|max:10" >
+            <v-text-field v-model="telephone"  :counter="10" :error-messages="errors" label="Telephone" required ></v-text-field>
+       </validation-provider>
 
-      <validation-provider
-        v-slot="{ errors }"
-        name="telephone"
-        rules="required|max:10" >
-        <v-text-field
-          v-model="telephone"
-           :counter="10"
-          :error-messages="errors"
-          label="Telephone"
-          required
-        ></v-text-field>
-      </validation-provider>
+        <validation-provider v-slot="{ errors }" name="select" rules="required" >
+           <v-select v-model="select" :items="items" :error-messages="errors" label="Country" data-vv-name="select" required></v-select>
+        </validation-provider>
 
-      <validation-provider
-        v-slot="{ errors }"
-        name="select"
-        rules="required" >
-        <v-select
-          v-model="select"
-          :items="items"
-          :error-messages="errors"
-          label="Country"
-          data-vv-name="select"
-          required
-        ></v-select>
-      </validation-provider>
+        <validation-provider v-slot="{ errors }" name="ZIP" rules="required|max:5"  >
+            <v-text-field v-model="ZIP" :counter="5" :error-messages="errors" label="ZIP code" required ></v-text-field>
+        </validation-provider>
 
-         <validation-provider
-        v-slot="{ errors }"
-        name="ZIP"
-        rules="required|max:5"  >
-        <v-text-field
-          v-model="ZIP"
-          :counter="5"
-          :error-messages="errors"
-          label="ZIP code"
-          required
-        ></v-text-field>
-      </validation-provider>
+        <validation-provider v-slot="{ errors }" name="Address" rules="required|max:40"  >
+            <v-text-field v-model="Address" :counter="40" :error-messages="errors" label="Address" required></v-text-field>
+        </validation-provider>
+          <v-divider class="mx-4" vertical ></v-divider>
+        </v-col>
 
-         <validation-provider
-        v-slot="{ errors }"
-        name="Address"
-        rules="required|max:40"  >
-        <v-text-field
-          v-model="Address"
-          :counter="40"
-          :error-messages="errors"
-          label="Address"
-          required
-        ></v-text-field>
-      </validation-provider>
+        <v-col md="10" offset-md="4">   
+           <v-btn class="mr-4"  color="success" @click="submit = true " > Save </v-btn>
+           <v-btn  color="error" class="mr-4" @click="clear">  Clear</v-btn>
+        </v-col>
+        <v-divider class="mx-4" vertical></v-divider>
 
- <v-divider
-      class="mx-4"
-      vertical
-    ></v-divider>
-
-    
-
-     </v-col>
-
- <v-divider
-      class="mx-4"
-      vertical
-    ></v-divider>
-
-    <v-col
-     md="10"
-        offset-md="4">   
-
-      <v-btn
-        class="mr-4"
-         color="success"
-        @click="submit = true " >
-        Save
-      </v-btn>
-
-      <v-btn 
-       color="error"
-       class="mr-4"
-       @click="clear">
-        Clear
-      </v-btn>
-     </v-col>
- <v-divider
-      class="mx-4"
-      vertical
-    ></v-divider>
-
-      </v-form>
+    </v-form>
+      <v-progress-linear color="cyan darken-2" rounded value="100" ></v-progress-linear>
     </validation-observer>
 </v-card>
         </v-col>
@@ -313,4 +170,15 @@
 
 
 
-
+<style>
+#bookreq {
+  height: 45px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  margin: -20px -11px 10px -11px;
+}
+</style>
