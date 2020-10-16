@@ -100,102 +100,170 @@
         <h3>Related Books</h3>
         <div id="relateditemlist">
           <div id="relatedItemgroup">
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/101.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >"The Hobbit Paperback"<br /><br /><b>
+                          "RS. 2100/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/11.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >HALMET the graphyc novel<br /><br /><b>
+                          "RS. 1500/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/103.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >the Quarantine Cooking Book<br /><br /><b>
+                          RS. 900/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/104.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >How to Publish a Book on Amazon in 2020<br /><br /><b>
+                          RS. 1100/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/10.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >"ANITA DESAI" the village<br /><br /><b>
+                          RS. 2500/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/105.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >The Institute: A Novel Hardcover<br /><br /><b>
+                          RS. 2900/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+            <a
               class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
-            <v-img
-              @click="selectitem(a)"
-              id="Image3"
-              class="related_image"
-              max-height="300"
-              max-width="150"
-              src="../assets/images/science.jpg"
-            ></v-img>
+              @click="getDetails()"
+              href="http://localhost:8080/#/BookDetails"
+            >
+              <v-hover v-slot:default="{ hover }">
+                <v-img class="images" src="../assets/images/106.jpg">
+                  <v-expand-transition>
+                    <div
+                      v-if="hover"
+                      class="d-flex transition-fast-in-fast-out blue lighten-5 v-card--reveal display-3 white--text"
+                      style="height: 100%; opacity: 90%"
+                    >
+                      <label class="BookName"
+                        >The Da Vinci Code (Robert Langdon) Paperback<br /><br /><b>
+                          RS. 2800/=</b
+                        ></label
+                      >
+                    </div>
+                  </v-expand-transition>
+                </v-img>
+              </v-hover>
+            </a>
+             
+             
           </div>
         </div>
         <v-progress-linear
@@ -224,7 +292,7 @@
 <script>
 export default {
   name: "BookOffers",
-  
+
   data() {
     return {
       items: [],
