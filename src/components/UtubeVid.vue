@@ -1,13 +1,11 @@
 <template>
-  <div class="block latestPostBlock">
+  <div>
     <v-container>
-      <h2 class="text-center">Guide</h2>
-
       <v-hover v-slot:default="{ hover }">
         <div>
         <v-card
           class="rounded-xl text-center"
-          style="background-image: linear-gradient(90deg, #1DCCE0, #4247DD);"
+          style="background-image: linear-gradient(90deg, #1DCCE0, teal);"
           dark
           max-width="100%"
           max-height="320"
@@ -41,7 +39,7 @@
       <v-hover v-slot:default="{ hover }">
         <v-card
           class="text-center rounded-xl"
-          style="background-image: linear-gradient(90deg,#4247DD,#1DCCE0);"
+          style="background-image: linear-gradient(90deg,teal,#1DCCE0);"
           dark
           max-width="100%"
           max-height="320"
@@ -74,7 +72,7 @@
       <v-hover v-slot:default="{ hover }">
         <v-card
           class="text-center rounded-xl"
-          style="background-image: linear-gradient(90deg, #1DCCE0, #4247DD);"
+          style="background-image: linear-gradient(90deg, #1DCCE0, teal);"
           dark
           max-width="100%"
           max-height="320"
@@ -107,7 +105,7 @@
       <v-hover v-slot:default="{ hover }">
         <v-card
           class="text-center rounded-xl"
-          style="background-image: linear-gradient(90deg,#4247DD,#1DCCE0);"
+          style="background-image: linear-gradient(35deg,teal,#1DCCE0);"
           dark
           max-width="100%"
           max-height="320"
@@ -145,7 +143,7 @@ export default {
   data: () => ({
     items: [
       {
-        src: require("../assets/images/nish.jpg"),
+        
       },
     ],
   }),

@@ -1,10 +1,9 @@
 <template>
-  <div class="block latestPostBlock">
+  <div >
     <v-container>
-      <h2 class="text-center">Up Coming Event</h2>
       <v-row>
         <v-col v-for="item in items" :key="item.id">
-          <v-card :loading="loading" class="mx-auto my-8 rounded-xl" max-width="374" :elevation="24" style="background-image: linear-gradient(75deg, #40C4FF, #1E88E5);">
+          <v-card :loading="loading" class="mx-auto my-8 rounded-xl" max-width="374" :elevation="24" style="background-image: linear-gradient(46deg, #40C4FF, teal);">
             <template slot="progress">
               <v-progress-linear
                 color="deep-purple"

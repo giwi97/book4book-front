@@ -1,157 +1,156 @@
 <template>
   <v-content>
-     <div class="staticHero">
+    <div class="staticHero">
       <v-img max-height="150" src="../assets/images/ggg.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
           <v-col>
             <v-container>
-              <h1 class="text-center font-weight-regular">Donate Book Details</h1>
+              <h1
+                style="font-size: 3.2vw"
+                class="text-center font-weight-regular"
+              >
+                Donate Book Details
+              </h1>
             </v-container>
           </v-col>
         </v-row>
       </v-img>
     </div>
-    <v-divider></v-divider>
-
-     <v-card style="max-width: 80%;" class="text-center" border-variant="info" >
-      <v-card-title class="headline font-weight-regular white--text " style="background-image: linear-gradient( 79deg, #1dcce0, teal);">
+    <br />
+    <v-card style="max-width: 75%" class="text-center" border-variant="info">
+      <v-card-title
+        class="headline font-weight-regular white--text"
+        style="background-image: linear-gradient(79deg, #1dcce0, teal)"
+      >
         Details form
       </v-card-title>
-         <b-form-radio-group class="text-center" v-model="btype" >
-          <b-form-radio  value="true">E-Books</b-form-radio>
-          <b-form-radio  value="false">Books</b-form-radio>
-         </b-form-radio-group>
+      <v-spacer></v-spacer>
+      <validation-observer ref="observer" v-slot="{}">
+        <form style="padding: 10px">
+<validation-provider v-slot="{ }" name="Book Type" rules="required" class="text-center" >
+<v-radio-group  v-model="btype" row :mandatory="false" >
+      <v-radio
+        label="E-Book"
+        value="true"
+      ></v-radio>
+      <v-radio
+        label="Books"
+        value="false"
+      ></v-radio>
+    </v-radio-group>
+</validation-provider>
 
-         <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-valid">Language :</label>
-          </b-col>
-          <b-col sm="4">
-            <b-form-select
-              id="input-3"
-              v-model="selected"
-              :options="language"
-              value-field="item"
-              text-field="name"
+          <validation-provider
+            v-slot="{ errors }"
+            name="BookTitle"
+            rules="required|min:1"
+          >
+            <v-text-field
+              v-model="name"
+              :counter="100"
+              :error-messages="errors"
+              label="Book Title"
               required
-            ></b-form-select>
-          </b-col>
-        </b-row>
-
-<v-divider></v-divider>
-
-        <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-title">Book Title:</label>
-          </b-col>
-          <b-col sm="8">
-            <b-form-input
-            required
-            v-model="title"
-              id="input-title"
-              placeholder="Enter title"
-            ></b-form-input>
-            Enter your title as it will appear on the book cover.
-          </b-col>
-        </b-row>
-
-          <v-divider></v-divider>
-
-         <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-invalid">Book Author name :</label>
-            
-          </b-col>
-          <b-col sm="4">
-            <b-form-input v-model="authr" required id="input-invalid" :state="null" ></b-form-input>
-          </b-col>
-         
-        </b-row>
-
-<v-divider></v-divider>
-       
-        <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-series">Series:</label>
-          </b-col>
-          <b-col sm="4">
-            <b-form-input
-              id="series-Name"
-              v-model="Sname"
+            ></v-text-field>
+          </validation-provider>
+          <validation-provider
+            v-slot="{ errors }"
+            name="Author"
+            rules="required"
+          >
+            <v-text-field
+              v-model="Author"
+              :error-messages="errors"
+              label="Author Name"
               required
-              :state="null"
-              placeholder="Series Name"
-            ></b-form-input>
-          </b-col>
+            ></v-text-field>
+          </validation-provider>
+
+          <b-row class="my-1">
           <b-col sm="4">
-            <b-form-input
-              id="series-no"
-              v-model="Sno"
+            <validation-provider
+            v-slot="{ errors }"
+            name="Series Name"
+            rules="required"
+          >
+            <v-text-field
+              v-model="SeriesName"
+              :error-messages="errors"
+              label="Series Name"
               required
-              :state="null"
-              placeholder="Series Number"
-            ></b-form-input>
-          </b-col>
-        </b-row>
-
-          <v-divider></v-divider>
-
-         <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-invalid">Description:</label>
-            (Opional)
-          </b-col>
-          <b-col sm="8">
-            <b-textarea v-model="Description" required name="message" rows="3"></b-textarea>
-          </b-col>
-        </b-row>
-
-        <v-divider></v-divider>
-
-         <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="auther">Reciever's Name:</label>
+            ></v-text-field>
+          </validation-provider>
           </b-col>
           <b-col sm="4">
-            <b-form-input
-              id="reciverf"
+            <validation-provider
+            v-slot="{ errors }"
+            name="Series Number"
+            rules="required|Number"
+          >
+            <v-text-field
+              v-model="SeriesNo"
+              :error-messages="errors"
+              label="Series Number"
+              required
+            ></v-text-field>
+          </validation-provider>
+          </b-col>
+        </b-row>
+
+          <validation-provider
+            v-slot="{ errors }"
+            name="Description"
+            rules="required"
+          >
+            <v-text-field
+              v-model="Description"
+              :error-messages="errors"
+              label="Description"
+              required
+            ></v-text-field>
+          </validation-provider>
+
+           <b-row class="my-1">
+          <b-col sm="4">
+             <validation-provider v-slot="{ errors }" name="Reciever's First Name" rules="required">
+            <v-text-field
               v-model="rfname"
-              :state="null"
-              placeholder="First Name"
-            ></b-form-input>
+              :error-messages="errors"
+              label="Reciever's First Name"
+              required
+            ></v-text-field>
+          </validation-provider>
           </b-col>
           <b-col sm="4">
-            <b-form-input
-            required
-              id="reciverl"
+            <validation-provider v-slot="{ errors }" name="Reciever's Last Name" rules="required">
+            <v-text-field
               v-model="rlname"
-              :state="null"
-              placeholder="Last Name"
-            ></b-form-input>
+              :error-messages="errors"
+              label="Reciever's Last Name"
+              required
+            ></v-text-field>
+          </validation-provider>
           </b-col>
         </b-row>
-
-        <v-divider></v-divider>
-
-        <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-invalid">Address :</label>
-          </b-col>
-          <b-col sm="8">
-            <b-textarea v-model="address" required name="message" rows="3"></b-textarea>
-          </b-col>
-        </b-row>
-
-        <v-divider></v-divider>
-<!-------------------------------------------- category window ---------->
-        <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-valid">Categories :</label>
-          </b-col>
+ 
+          <validation-provider
+            v-slot="{ errors }"
+            name="Address"
+            rules="required"
+          >
+            <v-text-field
+              v-model="Address"
+              :error-messages="errors"
+              label="Reciever Address"
+              required
+            ></v-text-field>
+          </validation-provider>
+ <!--------------------------------------------- category start ------------------->   
+          <b-row class="my-1">
            <b-col sm="4">
             <v-row justify="center">
     <v-dialog
-      v-model="dialog"
+      v-model="dialog1"
       scrollable
       max-width="300px"
     >
@@ -168,60 +167,58 @@
         <v-card-title>Select Category</v-card-title>
         <v-divider></v-divider>
         <v-card-text style="height: 300px;">
+           <validation-provider  v-slot="{ }" name="Category" rules="required" >
           <b-form-radio-group
-            v-model="dialogm1"
+            v-model="dialogm"
             :options="category"
             name="radios-stacked"
         stacked
             column
           > </b-form-radio-group>
+          
+  </validation-provider>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
           <v-btn
             color="blue darken-1"
             text
-            @click="dialog = false"
+            @click="dialog1 = false"
           >
             Close
           </v-btn>
           <v-btn
             color="blue darken-1"
             text
-            @click="dialog = false"
+            @click="dialog1 = false"
           >
             Save
           </v-btn>
         </v-card-actions>
       </v-card>
+      
     </v-dialog>
     
-  </v-row>
-          </b-col>
-<b-col sm="4">
-  <v-chip
-      class="text-white"
-      color="cyan"
-    >{{ dialogm1 }} </v-chip>
-</b-col>
-
+        </v-row>
+        </b-col>
+        <b-col sm="4">
+            <v-chip class="text-white" color="cyan">{{ dialogm }} </v-chip>
+        </b-col>
         </b-row>
-
-        <v-divider></v-divider>
-        
+<!------------------------------------------------- category end --------------------->
+<v-divider></v-divider>
+<validation-provider v-slot="{ }" name="if you love to send E-book use this" rules="required">
         <b-row class="my-1">
-          <b-col sm="3">
-            <label class="font-weight-bold" for="input-invalid">E-Book file:</label>
-          </b-col>
           <b-col sm="4">
            
               <v-file-input
+                :disabled='isDisabled'
                 v-model="files"
                 color="deep-purple accent-4"
                 counter
                 label="File input"
                 multiple
-                placeholder="Select your files"
+                placeholder="* if you love to send E-book use this"
                 prepend-icon="mdi-paperclip"
                 outlined
                 :show-size="1000"
@@ -234,101 +231,126 @@
                     label
                     small
                   >
-                    {{ text }}
+                    {{ text }} 
                   </v-chip>
 
                   <span
                     v-else-if="index === 2"
                     class="overline grey--text text--darken-3 mx-2"
                   >
-                    +{{ files.length - 2 }} File(s)
+                    +{{ files.length - 2 }} File(s)  
                   </span>
                 </template>
               </v-file-input>
             </b-col>
             </b-row>
+</validation-provider>
+<!--------------------------------- end file upload ---------------->
 
-            <v-divider></v-divider>
+  <validation-provider
+                v-slot="{ errors }"
+                name="email"
+                rules="required|email"
+              >
+                <v-text-field
+                  v-model="email"
+                  :error-messages="errors"
+                  label="Reciever E-mail"
+                  required
+                ></v-text-field>
+              </validation-provider>
 
-            <b-row class="my-1">
-             <b-col sm="3">
-              <label class="font-weight-bold" for="input-invalid">Reciever's Mobile No:</label>
-             
-              </b-col>
-              <b-col sm="4">
-              <b-form-input
-              id="mnumber"
-              type="numbers"
-              v-model="pnumber"
-              required
-              :state="null"
-              placeholder="Enter Mobile No"
-            ></b-form-input>
-          </b-col>
-        </b-row>
-         <b-button block type="submit" @click="validate" style=" background-image: linear-gradient( 150deg, #1dcce0, teal);">Submit</b-button>
-
-            </v-card>
+          <br>
+          <v-row align="end" justify-md="end">
+            <!-- @click="submit"-->
+             <v-btn block dark type="submit"  
+             :disabled="dialog"
+              :loading="dialog"
+              @click="dialog = true"
+               style="background-image: linear-gradient( 150deg, #1dcce0, teal);">Submit</v-btn>
+          
+            <v-dialog v-model="dialog" hide-overlay persistent width="300">
+              <v-card color="#1dcce0" dark>
+                <v-card-text>
+                  Please wait...
+                  <v-progress-linear
+                    indeterminate
+                    color="white"
+                    class="mb-0"
+                  ></v-progress-linear>
+                </v-card-text>
+              </v-card>
+            </v-dialog>
+          </v-row>
+        </form>
+      </validation-observer>
+    </v-card>
+    <br />
+    <br />
   </v-content>
 </template>
 
 <script>
-
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+import { required, min ,numeric} from "vee-validate/dist/rules";
+import {
+  extend,
+  ValidationObserver,
+  ValidationProvider,
+  setInteractionMode,
+} from "vee-validate";
 
+setInteractionMode("eager");
+
+extend("required", {
+  ...required,
+  message: "{_field_} can not be empty",
+});
+
+extend("min", {
+  ...min,
+  message: "{_field_} may not be lower than {length} characters",
+});
+
+extend("Number", {
+  ...numeric,
+  message: "It must me a Number",
+});
 export default {
   name: "BookOffers",
 
- //  components: {
- //   Donate,
- // },
-
-   data() {
-    return {
-      files: [],
-     
-      dialogm1: '-Select Category-',
-      dialog: false,
-
-     
-        title: '',
-        btype: true,
-        authr: '',
-        Sname: '',
-        Sno: '',
-        Description: '',
-        rfname: '',
-        rlname: '',
-        address: '',
-        pnumber: '',
-      
-     
-       methods: {
-    validate () {
-        this.$refs.form.validate()
+computed: {
+      isDisabled() {
+        // you can  check your form is filled or not here.
+        return this.btype == true
       },
-   
-    onSubmit() {
-      this.$validator.validateAll().then(result => {
-        if (!result) {
-          return;
-        }
+    }, 
 
-        alert("Form submitted!");
-      });
-    }
-       },    
-
-      selected: "English",
-      language: [
-        { item: "English", name: "English" },
-        { item: "Sinhala", name: "Sinhala" },
-      ],
+  components: {
+    ValidationProvider,
+    ValidationObserver,
+  },
 
 
-      category: [
+  data: () => ({
+    dialog1: false,
+  dialogm: "-Select Category-",
+    files: [],
+    title: "",
+    btype: "true",
+    author: "",
+    SeriesName: "",
+    SeriesNo: "",
+    Description: "",
+    rfname: "",
+    rlname: "",
+    Address: "",
+    email: "",
+    errors: null,
+    dialog: false,
+    category: [
           { text: 'Adventure', value: 'Adventure' },
           { text: 'Agriculture', value: 'Agriculture' },
           { text: 'Archaeology', value: 'Archaeology' },
@@ -365,9 +387,28 @@ export default {
           { text: 'Travel and Tourism', value: 'Travel and Tourism' },
           { text: 'Yoga and Meditation', value: 'Yoga and Meditation' }
         ],
+  }),
 
-        show: true,
-    };
+  methods: {
+    submit() {
+      this.$refs.observer.validate();
+    },
   },
+  watch: {
+    dialog(val) {
+      this.$refs.observer.validate();
+      if (!this.errors) {
+        if (!val) return;
+        setTimeout(() => (this.dialog = false), 4000);
+        setTimeout(() => this.$router.push({ path: "/bookoffers" }), 4000);
+      } else {
+        return false;
+      }
+      //this.$router.push("/login");
+    },
+  },
+
+ 
+
 };
 </script>
