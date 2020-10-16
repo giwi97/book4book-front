@@ -53,17 +53,13 @@
       @click:append="show1 = !show1"
       ></v-text-field>
 
+     
   <v-divider
       class="mx-4"
       vertical
     ></v-divider>
     
-
-
-
    <router-link  to="/Signup"><h4>Forget Password</h4></router-link>
-
-
     
   </v-col>
 <v-divider
@@ -78,7 +74,7 @@
       :disabled="!valid"
       color="success"
       class="mr-4"
-      @click="validate"
+      @click="Submit = true"
        router-link to="/Home"  >
       Login
     </v-btn>
@@ -109,8 +105,7 @@
 <v-btn
       color="warning"
       class="mr-4"
-      @click="validate"
-       router-link to="/Signup"  >
+      @click="validate">
      create a new account
     </v-btn>
 
@@ -193,6 +188,19 @@
         this.$refs.form.reset()
       },
     },
+     watch: {
+    Submit(val) {
+      this.$refs.observer.validate();
+      if (!this.errors) {
+        if (!val) return;
+        setTimeout(() => (this.Submit = false), 4000);
+        setTimeout(() => this.$router.push({ path: '/Home'}), 4000);
+        
+      }else{
+        return false
+      }
+    },
+  },
   }
 
 
