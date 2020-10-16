@@ -320,20 +320,6 @@
         this.$refs.observer.reset()
       },
     },
-
-    watch: {
-    submit(val) {
-      this.$refs.observer.validate();
-      if (!this.errors) {
-        if (!val) return;
-        setTimeout(() => (this.submit = false), 4000);
-        setTimeout(() => this.$router.push({ path: '/profile'}), 4000);
-        
-      }else{
-        return false
-      }
-    },
-  },
   }
 </script>
 
