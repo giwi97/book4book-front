@@ -2,10 +2,10 @@
   <v-content>
     <div class="block latestPostBlock">
     <h2 class="text-center">FAQ</h2>
-    
-    
+     
    <Faq />
-    </div>
+    </div> 
+    
   </v-content>
 </template>
 
