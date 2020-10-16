@@ -99,6 +99,20 @@
                     </v-card-text>
                   </v-card>
                 </v-dialog>
+                <v-snackbar v-model="snackbar">
+                  {{ text }}
+
+                  <template v-slot:action="{ attrs }">
+                    <v-btn
+                      color="pink"
+                      text
+                      v-bind="attrs"
+                      @click="snackbar = false"
+                    >
+                      Close
+                    </v-btn>
+                  </template>
+                </v-snackbar>
               </v-row>
             </form>
           </validation-observer>
@@ -160,6 +174,8 @@ export default {
     book: "",
     errors: null,
     dialog: false,
+    snackbar: false,
+    text: "Submitted",
   }),
 
   methods: {
@@ -176,17 +192,18 @@ export default {
   },
   watch: {
     async dialog(val) {
-      const isValid =await this.$refs.observer.validate();
+      const isValid = await this.$refs.observer.validate();
       if (!isValid) {
         this.dialog = false;
-
+        return;
       } else {
-        //return false;
-        
+
         if (!val) return;
         setTimeout(() => (this.dialog = false), 4000);
-        setTimeout(() => location.reload(), 4000);
+        setTimeout(() => location.reload(),  4000);
+        setTimeout(() => (this.snackbar = true), 4000)
       }
+      //this.snackbar = true;
     },
   },
 };
