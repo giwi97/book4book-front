@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="staticHero">
-      <v-img max-height="230" src="../assets/images/img14.jpg">
+      <v-img max-height="150" src="../assets/images/ggg.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
           <v-col>
             <v-container>
@@ -13,9 +13,12 @@
     </div>
     <div class="line" id="scrollIndicator"></div>
     <div class="block">
-      <h2 class="text-center">Members</h2>
-
-      <v-card color="#37474F" width="500" style="margin:auto;">
+      <v-card color="teal" width="500" style="margin:auto;">
+        <v-card-title style="color:white;font-weight:bold;"
+          ><v-spacer></v-spacer>
+          Search for Members
+          <v-spacer></v-spacer>
+        </v-card-title>
         <v-card-text>
           <v-autocomplete
             item-color="grey"
@@ -26,7 +29,7 @@
             :items="items"
             :loading="isLoading"
             :search-input.sync="search"
-            color="primary"
+            color="white"
             hide-no-data
             hide-selected
             item-text="Name"
@@ -39,11 +42,11 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-expand-transition>
-          <v-list v-if="model" color="#424242" dark>
+          <v-list v-if="model" color="#FFF8E1">
             <v-list-item v-for="(field, i) in fields" :key="i">
               <v-list-item-content>
-                <v-list-item-subtitle v-text="field.key"></v-list-item-subtitle>
-                <v-list-item-title v-text="field.value"></v-list-item-title>
+                <v-list-item-subtitle style="font-weight:bold;" v-text="field.key"></v-list-item-subtitle>
+                <v-list-item-title style="font-weight:bold;" v-text="field.value"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
