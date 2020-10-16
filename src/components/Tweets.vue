@@ -53,12 +53,12 @@
                   <v-icon class="mr-1">
                     mdi-heart
                   </v-icon>
-                  <span class="subheading mr-2">256</span>
+                  <span class="subheading mr-2">{{n.likes}}</span>
                   <span class="mr-1">·</span>
                   <v-icon class="mr-1">
                     mdi-share-variant
                   </v-icon>
-                  <span class="subheading">45</span>
+                  <span class="subheading">{{n.shares}}</span>
                 </v-row>
               </v-list-item>
             </v-card-actions>
@@ -78,43 +78,57 @@ export default {
           id: 1,
         message: "Good job @book4book. You guys are amazing",
         name: "Peter Edmond",
-        src: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+        likes: 325,
+        shares: 5
       },
       {
           id: 2,
         message: "Amazing Work for the community",
         name: "Adam Levi",
-        src: "https://cdn.vuetifyjs.com/images/lists/2.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+        likes: 62,
+        shares: 2
       },
       {
           id: 3,
         message: "Well done @book4book !",
         name: "Amana Hazeem",
-        src: "https://cdn.vuetifyjs.com/images/lists/3.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
+        likes: 555,
+        shares: 64
       },
       {
           id: 4,
         message: "Thank you @book4book!",
         name: "Jessica James",
-        src: "https://cdn.vuetifyjs.com/images/lists/4.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
+        likes: 125,
+        shares: 10
       },
       {
           id: 5,
         message: "Cheering on from across the globe Earth globe. Job well done @book4book",
         name: "Madelyn Marie",
-        src: "https://cdn.vuetifyjs.com/images/lists/5.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
+        likes: 69,
+        shares: 2
       },
       {
           id: 6,
         message: "Really enjoyed Book donation day 2020 with @book4book.",
         name: "Zaharan Hasheem",
-        src: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+        likes: 56,
+        shares: 7
       },
       {
           id: 7,
         message: "Keep the good work up. :)",
         name: "David Warner",
-        src: "https://cdn.vuetifyjs.com/images/lists/2.jpg"
+        src: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+        likes: 785,
+        shares: 56
       }
 
 
