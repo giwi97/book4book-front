@@ -3,6 +3,7 @@
     <Hero />
     <Gallery />
     <Featured />
+    <Tweets />
   </v-content>
 </template>
 
@@ -11,6 +12,7 @@ import Hero from "../components/Hero";
 //import Description from "../components/Description";
 import Featured from "../components/Featured";
 import Gallery from "../components/Gallery"
+import Tweets from "../components/Tweets"
 
 export default {
   name: "Home",
@@ -19,7 +21,8 @@ export default {
     Hero,
     //Description,
     Featured,
-    Gallery
+    Gallery,
+    Tweets
   },
 
   data() {
