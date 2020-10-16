@@ -10,36 +10,36 @@
         >
         <v-spacer></v-spacer>
         <div>
-        <v-col align-self="end" class="hidden-xs-only">
-          <v-btn
-            rounded
-            outlined
-            depressed
-            style="font-size: 10px;font-weight: bold;"
-            to="/Login"
-          >
-            Register / Login
-          </v-btn>
-          <v-btn
-            rounded
-            outlined
-            color="#26C6DA"
-            dark
-            style="font-size: 10px;font-weight: bold;margin-left:5px;"
-            to="/BookCategory"
-          >
-            Categories
-          </v-btn>
-        </v-col>
+          <v-col align-self="end" class="hidden-xs-only">
+            <v-btn
+              rounded
+              outlined
+              depressed
+              style="font-size: 10px;font-weight: bold;"
+              to="/Login"
+            >
+              Register / Login
+            </v-btn>
+            <v-btn
+              rounded
+              outlined
+              color="#26C6DA"
+              dark
+              style="font-size: 10px;font-weight: bold;margin-left:5px;"
+              to="/BookCategory"
+            >
+              Categories
+            </v-btn>
+          </v-col>
         </div>
       </v-app-bar>
       <v-navigation-drawer
-      class="px-3 py-2"
+        class="px-3 py-2"
         v-model="drawer"
         absolute
         temporary
         height="1200%"
-        width="50%"
+        width="30%"
         disable-resize-watcher
       >
         <v-list nav>
@@ -47,28 +47,23 @@
             v-model="group"
             active-class="deep-blue--text text--accent-4"
           >
-            <!-- <v-form>
-          <v-col
-          cols="12"
-          sm="6"
-          md="4"
-        > -->
-
             <v-text-field
               label="Search"
               filled
               rounded
-              append-icon="mdi-magnify"
+              append="mdi-magnify"
             ></v-text-field>
 
             <!-- </v-col> -->
             <!-- </v-form> -->
             <br />
 
-<v-divider></v-divider>
+            <v-divider></v-divider>
             <router-link to="/login">
               <v-list-item>
-                <h4 style="font-weight:bold;margin-left:10%;">Login/Register</h4>
+                <h4 style="font-weight:bold;margin-left:10%;">
+                  Login/Register
+                </h4>
               </v-list-item>
             </router-link>
 
@@ -150,8 +145,8 @@
             </router-link>
 
             <v-divider></v-divider>
-            <br>
-            <br>
+            <br />
+            <br />
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -164,9 +159,9 @@ export default {
   name: "Header",
   data: () => ({ drawer: null, group: null }),
   watch: {
-      group () {
-        this.drawer = false
-      },
+    group() {
+      this.drawer = false;
     },
+  },
 };
 </script>
