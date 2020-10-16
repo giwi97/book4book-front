@@ -95,7 +95,17 @@
     ></v-divider>
 <v-col
         md="8"
-        offset-md="5">
+        offset-md="4">
+
+        <v-btn
+      color="primary"
+      class="mr-4"
+      @click="validate"
+       router-link to="/Editpro"  >
+      Edit Profile
+    </v-btn>
+
+
     <v-btn
       color="warning"
       class="mr-4"
@@ -113,8 +123,3 @@
 </template>
 
 
-<script>
-
-
-  
-</script>

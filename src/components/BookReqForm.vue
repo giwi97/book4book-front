@@ -197,11 +197,10 @@ export default {
         this.dialog = false;
         return;
       } else {
-
         if (!val) return;
         setTimeout(() => (this.dialog = false), 4000);
-        setTimeout(() => location.reload(),  4000);
-        setTimeout(() => (this.snackbar = true), 4000)
+        setTimeout(() => location.reload(), 4000);
+        setTimeout(() => (this.snackbar = true), 4000);
       }
       //this.snackbar = true;
     },
@@ -211,7 +210,7 @@ export default {
 <style>
 #bookreq {
   height: 45px;
-  background-color: teal;
+  background-image: linear-gradient(79deg, #1dcce0, teal);
   color: white;
   font-weight: bold;
   text-align: center;
