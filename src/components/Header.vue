@@ -45,7 +45,7 @@
         <v-list nav>
           <v-list-item-group
             v-model="group"
-            active-class="deep-purple--text text--accent-4"
+            active-class="deep-blue--text text--accent-4"
           >
             <!-- <v-form>
           <v-col

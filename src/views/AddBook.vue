@@ -192,7 +192,7 @@ export default {
 
 #addBook {
   height: 45px;
-  background-color: teal;
+  background-image: linear-gradient(79deg, #1dcce0, teal);
   color: white;
   font-weight: bold;
   text-align: center;
