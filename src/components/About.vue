@@ -1,9 +1,8 @@
 <template >
-  <div class="block latestPostBlock">
+  <div >
     <v-container>
-      <h2 class="text-center">About Us</h2>
       <v-card class="mx-auto rounded-xl" max-width="100%" :elevation="15">
-        <h5 class="text-center ma-6 blue--text font-bold">
+        <h5 class="text-center ma-6 teal--text font-bold">
           Book4Book is a book exchange platform created by enthusiastic readers,
           tech geeks and nature lovers from Greece subsequently spread over the
           world. The World Summit Award 2013 paved the part for creating the Sri
@@ -25,7 +24,7 @@
             dark
             class="mx-auto rounded-xl text-center"
             max-width="100%"
-            style=" background-image: linear-gradient( 90deg, #1dcce0, #4247dd, #4fc3f7);"
+            style=" background-image: linear-gradient( 345deg, #1dcce0, teal);"
             :elevation="15"
           >
             <h2 class="text-center font-weight-bold">Sri Lankan ambassador
