@@ -2,7 +2,11 @@
   <v-main>
     <v-flex>
       <v-flex v-for="(task, index) in tasks" v-bind:key="task">
-        <v-card color="blue-grey lighten-4" class="mx-auto" max-width="1175">
+        <v-card
+          color="blue-grey lighten-4"
+          class="pa-6 mx-auto"
+          max-width="1175"
+        >
           <v-card-text>
             <v-row>
               <v-list-item-avatar color="grey darken-3">
@@ -21,8 +25,18 @@
                 </h3>
                 <p class="subtitle-2 font-weight-bold">Description :</p>
                 <div class="subtitle-2">{{ task.Description }}</div>
+                <div>
+                  <v-btn class="ma-2" text icon color="blue lighten-2">
+                    <v-icon>mdi-thumb-up</v-icon>
+                  </v-btn>
+
+                  <v-btn class="ma-2" text icon color="red lighten-2">
+                    <v-icon>mdi-thumb-down</v-icon>
+                  </v-btn>
+                </div>
               </div>
             </v-card-title>
+
             <v-row align="end" justify-md="end">
               <v-card-actions v-if="edit == false">
                 <v-icon class="mr-2" @click="editTask(task, index)"
@@ -51,7 +65,7 @@
                       <v-btn
                         color="green darken-1"
                         text
-                        @click="deleteTask(index)"
+                        @click="deleteTask(index, (dialog = false))"
                       >
                         Delete Post
                       </v-btn>
@@ -65,26 +79,6 @@
               </v-card-actions>
             </v-row>
           </v-card-text>
-          <v-divider></v-divider>
-          <v-card-actions>
-            <v-btn text color="deep-purple accent-4" @click="show = !show">
-              Comments
-              <v-icon>{{
-                show ? "mdi-chevron-up" : "mdi-chevron-down"
-              }}</v-icon>
-            </v-btn>
-          </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="show">
-              <v-text-field label="Reply" filled rounded dense>
-               
-              </v-text-field>
-                <v-row align="end" justify-md="end">
-               <v-btn rounded color="primary"> send </v-btn>
-                </v-row>
-            </div>
-          </v-expand-transition>
         </v-card>
       </v-flex>
     </v-flex>
@@ -94,11 +88,17 @@
         <v-content>
           <v-container>
             <v-card class="mx-auto teal lighten-4" max-width="650">
-              <v-form ref="form">
-                <p class="subtitle-1 font-weight-bold">Add Your Post </p>
-                <v-text-field class="pa-3" v-model="task" label="Subject">
+              <v-form ref="form" v-model="valid" lazy-validation>
+                <p class="subtitle-1 font-weight-bold">Add Your Post</p>
+                <v-text-field
+                  :rules="[(v) => !!v || 'Subject is required']"
+                  v-model="task"
+                  label="Subject"
+                  required
+                >
                 </v-text-field>
                 <v-textarea
+                  :rules="[(v) => !!v || 'Description is required']"
                   background-color="teal lighten-5"
                   auto-grow
                   rows="4"
@@ -106,20 +106,26 @@
                   class="pa-3"
                   v-model="Description"
                   label="Description"
+                  required
                 >
                 </v-textarea>
                 <v-row align="center" justify="center">
+                  <v-btn v-if="edit != true" color="normal" @click="reset">
+                    clear
+                  </v-btn>
                   <v-btn
+                    :disabled="!valid"
                     v-if="edit != true"
                     color="primary"
-                    @click="addTask(task, Description, $event)"
+                    @click="validate, addTask(task, Description, $event)"
                   >
                     Post
                   </v-btn>
+
                   <v-btn
                     v-if="edit == true"
                     color="success"
-                    @click="updateTask($event)"
+                    @click="updateTask($event, validate)"
                   >
                     Update
                   </v-btn>
@@ -144,6 +150,7 @@
 export default {
   el: "#app",
   data: () => ({
+    valid: true,
     task: "",
     Description: "",
     edit: false,
@@ -151,22 +158,31 @@ export default {
     cancel: false,
     id2: 0,
     ind: 0,
-    show: false,
+
     dialog: false,
 
     tasks: [],
   }),
 
   methods: {
+    validate() {
+      this.$refs.form.validate();
+    },
+    reset() {
+      this.$refs.form.reset();
+    },
+
     addTask: function (t, d, e) {
-      e.preventDefault();
-      this.tasks.push({
-        task: this.task,
-        Description: this.Description,
-      });
-      localStorage.setItem("tasks", JSON.stringify(this.tasks));
-      this.task = "";
-      this.Description = "";
+      if (this.$refs.form.validate()) {
+        e.preventDefault();
+
+        this.tasks.push({
+          task: this.task,
+          Description: this.Description,
+        });
+
+        localStorage.setItem("tasks", JSON.stringify(this.tasks));
+      }
     },
     editTask: function (t, i) {
       this.edit = !this.edit;
@@ -185,8 +201,6 @@ export default {
       localStorage.setItem("tasks", JSON.stringify(this.tasks));
       let taskDB = JSON.parse(localStorage.getItem("tasks"));
       this.tasks = taskDB;
-      this.task = "";
-      this.Description = "";
     },
     cancelTask: function (e) {
       e.preventDefault();
