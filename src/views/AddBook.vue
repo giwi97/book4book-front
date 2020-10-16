@@ -1,5 +1,16 @@
 <template>
   <v-content>
+    <div class="staticHero">
+      <v-img max-height="150" src="../assets/images/ggg.jpg">
+        <v-row align="end" class="lightbox white--text pa-2 fill-height">
+          <v-col>
+            <v-container>
+              <div class="headline">Add Books</div>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-img>
+    </div>
     <div style="margin-left: 8%; width: 92%; padding-top: 10px">
       <v-card style="float: left; width: 92%" class="mx-auto">
         <div id="addBook">Add Book</div>
@@ -85,14 +96,14 @@ export default {
       reviewText: this.reviewText,
     };
   },
-  mounted: function () {
+  mounted: function() {
     this.apendreview();
   },
   methods: {
-    selectitem: function () {
+    selectitem: function() {
       alert();
     },
-    SetReview: function () {
+    SetReview: function() {
       this.ReviewArray.push(
         '<tr> <ul><li><label class="R_Name">Harshit Sharma</label></li></ul><label class="R_details">' +
           document.getElementById("reviewText").value +
@@ -103,7 +114,7 @@ export default {
       document.getElementById("reviewText").value = "";
       this.apendreview();
     },
-    apendreview: function () {
+    apendreview: function() {
       var ReviewArraynext = this.$session.get("Addreview");
       for (var key in ReviewArraynext) {
         document.getElementById("reviewTable").insertRow(0).innerHTML =
@@ -114,18 +125,18 @@ export default {
       const file = e.target.files[0];
       this.url = URL.createObjectURL(file);
     },
-    onChange: function () {
+    onChange: function() {
       var src = document.getElementById("Image1File").value;
       // var target = document.getElementById("mainImage1");
       alert(src);
     },
 
     selectImage() {
-      this.$refs.fileInput.click(); 
+      this.$refs.fileInput.click();
     },
     pickFile() {
-      let input = this.$refs.fileInput;      
-      let file = input.files;      
+      let input = this.$refs.fileInput;
+      let file = input.files;
       if (file && file[0]) {
         let reader = new FileReader();
         reader.onload = (e) => {
@@ -144,21 +155,21 @@ export default {
         description: this.description,
         // location: document.getElementById("imgupload").value,
         location: "../assets/images/science.jpg",
-      }
+      };
 
-      var json = JSON.parse(localStorage.getItem('BookList'));
-      if(!json===""){
+      var json = JSON.parse(localStorage.getItem("BookList"));
+      if (!json === "") {
         this.itemlist = json;
       }
-      this.itemlist.push(book)
-      localStorage.setItem('BookList', JSON.stringify(this.itemlist))      
+      this.itemlist.push(book);
+      localStorage.setItem("BookList", JSON.stringify(this.itemlist));
       alert(json[0].location);
     },
   },
 };
 </script>
 
-<style   >
+<style>
 .imagePreviewWrapper {
   width: 220px;
   height: 304px;

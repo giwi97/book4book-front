@@ -4,6 +4,7 @@
       <h2 class="text-center">Guide</h2>
 
       <v-hover v-slot:default="{ hover }">
+        <div>
         <v-card
           class="rounded-xl text-center"
           style="background-image: linear-gradient(90deg, #1DCCE0, #4247DD);"
@@ -15,7 +16,7 @@
           >
             <div class="d-flex justify-space-between">
               <div>
-                <h1 class="font-bold my-16 pl-9" style="font-size: 40px">
+                <h1 class="font-bold my-16 pl-9" style="font-size: 3.2vw;">
                   - What is the Book4Book -
                 </h1>
               </div>
@@ -32,6 +33,7 @@
               </div>
             </div>
         </v-card>
+        </div>
       </v-hover>
       <br />
       <v-divider class="pt-9"></v-divider>
@@ -59,7 +61,7 @@
               ></iframe>
             </div>
             <div>
-              <h1 class="font-bold py-16" style="font-size: 30px">
+              <h1 class="font-bold py-16" style="font-size: 2.6vw;">
                 - Watch here how to register as a member of Book4Book -
               </h1>
             </div>
@@ -81,7 +83,7 @@
         >
           <div class="d-flex justify-space-between">
             <div>
-              <h1 class="font-bold px-16 my-16" style="font-size: 30px">
+              <h1 class="font-bold px-10 my-16" style="font-size: 2.6vw;">
                 - Watch here how to post a book request in Book4Book -
               </h1>
             </div>
@@ -125,7 +127,7 @@
               ></iframe>
             </div>
             <div>
-              <h1 class="font-bold pa-16" style="font-size: 30px">
+              <h1 class="font-bold pa-10" style="font-size:  2.6vw;">
                 - Watch here how to donate a book in Book4Book -
               </h1>
             </div>

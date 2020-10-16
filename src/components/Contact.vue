@@ -1,4 +1,11 @@
 <template>
+<v-content>
+  <v-row>
+    <v-col>
+<v-card class="mx-auto"
+    max-width="344"
+    outlined
+     elevation="8">
   <form>
       <!--Name-->
     <v-text-field
@@ -51,7 +58,7 @@
     <v-btn
       class="mr-4"
       @click="submit"
-      
+      color="success"
     >
       submit
     </v-btn>
@@ -63,6 +70,24 @@
       clear
     </v-btn>
   </form>
+</v-card>
+    </v-col>
+    <v-col>
+      <p>Address</p>
+      <p> No. 001 </p>
+       <p> colombo 00 </p>
+       <p> Western Province</p>
+       <p>Sri Lanka</p>
+       <br>
+       <p>Email: </p>
+       <p>book4book@uiu.com</p>
+       <br>
+      <p>Phone Number</p>
+      <p>011 2222 222</p>
+
+    </v-col>
+  </v-row>
+</v-content>
 </template>
 
 <script>

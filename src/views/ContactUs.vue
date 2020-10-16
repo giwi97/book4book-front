@@ -1,7 +1,9 @@
 <template>
 <v-content>
-  <h1>Contact US </h1>
-  <br>
+  <div class="block latestPostBlock">
+  <h2 class="text-center">Contact US </h2>
+  </div>
+
   <Contact />
 </v-content>
 </template>

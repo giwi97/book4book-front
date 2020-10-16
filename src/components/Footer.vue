@@ -14,7 +14,7 @@
         <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/feedback">
           Feedback
         </v-btn>
-        <v-btn class="ma-2" outlined rounded color="#26C6DA">
+        <v-btn class="ma-2" outlined rounded color="#26C6DA" to="/FAQpage">
           FAQ
         </v-btn>
       </div>

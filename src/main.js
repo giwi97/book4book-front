@@ -1,4 +1,5 @@
 import Vue from "vue";
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
@@ -18,6 +19,8 @@ import Signup from "./views/Signup";
 import Feedback from "./views/Feedback";
 import ContactUs from "./views/ContactUs"; 
 import BookCategory from "./views/BookCategory";
+import EbookGroup from "./views/EbookGroup";
+import FAQpage from "./views/FAQpage";
 import Editpro from "./views/Editpro";
 import TimeL from "./views/TimeL";
 import Profile from "./views/Profile";
@@ -29,6 +32,8 @@ import NewS from "./views/NewS";
 Vue.use(VueRouter);
 
 import "./scss/main.scss";
+
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
@@ -47,6 +52,8 @@ const router = new VueRouter({
     { path: "/feedback", component: Feedback},
     { path: "/contactus", component: ContactUs},
     { path: "/BookCategory", component: BookCategory },
+    { path: "/ebookgroup", component: EbookGroup},
+    { path: "/faqpage", component: FAQpage},
     { path: "/Editpro", component: Editpro },
     { path: "/TimeL", component: TimeL },
     { path: "/Profile", component: Profile },
@@ -60,4 +67,5 @@ new Vue({
   router,
   vuetify,
   render: (h) => h(App),
+
 }).$mount("#app");
