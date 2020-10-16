@@ -3,13 +3,14 @@
     <v-card flat style="width:100%;">
       <v-app-bar dark flat color="#212121">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-        Menu
+        <v-col class="hidden-xs-only">Menu</v-col>
         <v-spacer></v-spacer>
         <v-toolbar-title @click="$router.push('/')" style="cursor:pointer"
           >Book4Book</v-toolbar-title
         >
         <v-spacer></v-spacer>
         <div>
+        <v-col align-self="end" class="hidden-xs-only">
           <v-btn
             rounded
             outlined
@@ -29,14 +30,17 @@
           >
             Categories
           </v-btn>
+        </v-col>
         </div>
       </v-app-bar>
       <v-navigation-drawer
+      class="px-3 py-2"
         v-model="drawer"
         absolute
         temporary
-        height="800"
-        width="25%"
+        height="1200%"
+        width="50%"
+        disable-resize-watcher
       >
         <v-list nav>
           <v-list-item-group
@@ -146,6 +150,8 @@
             </router-link>
 
             <v-divider></v-divider>
+            <br>
+            <br>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>

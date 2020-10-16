@@ -3,8 +3,8 @@
     <v-container>
       <h2 class="text-center">Featured</h2>
       <v-row>
-        <v-col cols="4" v-for="item in items" :key="item.id">
-          <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+        <v-col cols="12" md="4" v-for="item in items" :key="item.id">
+          <v-card :loading="loading" class="mx-auto my-12" max-width="400">
             <template slot="progress">
               <v-progress-linear
                 color="deep-purple"
