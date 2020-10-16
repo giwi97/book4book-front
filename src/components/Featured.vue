@@ -4,7 +4,7 @@
       <h2 class="text-center">Featured</h2>
       <v-row>
         <v-col cols="12" md="4" v-for="item in items" :key="item.id">
-          <v-card :loading="loading" class="mx-auto my-12" max-width="400">
+          <v-card :loading="loading" class="mx-auto my-12" max-width="400" light>
             <template slot="progress">
               <v-progress-linear
                 color="deep-purple"
@@ -18,7 +18,7 @@
               :src="item.src"
             ></v-img>
 
-            <v-card-title>{{item.title}}</v-card-title>
+            <v-card-title style="background-color:white;font-weight:bold;">{{item.title}}</v-card-title>
 
             <v-card-text>
               <v-row align="center" class="mx-0">
@@ -48,8 +48,8 @@
             <v-divider class="mx-4"></v-divider>
 
             <v-card-actions>
-              <v-btn color="deep-purple lighten-2" text @click="reserve">
-                Reserve
+              <v-btn color="deep-purple lighten-2" text to="/BookCategory">
+                Find
               </v-btn>
             </v-card-actions>
           </v-card>
