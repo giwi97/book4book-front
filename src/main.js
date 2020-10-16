@@ -26,6 +26,7 @@ import TimeL from "./views/TimeL";
 import Profile from "./views/Profile";
 import BookDetails from "./views/BookDetails";
 import AddBook from "./views/AddBook";
+import NewS from "./views/NewS";
 
 
 Vue.use(VueRouter);
@@ -58,6 +59,7 @@ const router = new VueRouter({
     { path: "/Profile", component: Profile },
     { path: "/BookDetails", component: BookDetails }, 
     { path: "/AddBook", component: AddBook }, 
+    { path: "/NewS", component: NewS }, 
   ],
 });
 

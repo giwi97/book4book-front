@@ -1,7 +1,7 @@
 <template>
   <v-content>
       <v-container class="fill-height" fluid 
-     style="height: 1230px">
+     style="height: 1350px">
 
          <v-row  justify="center"> 
         <v-col
@@ -12,15 +12,17 @@
    class="mx-auto"
     color="#651FFF"
     dark
+     
     max-height="1300"
-    max-width="1000"
+    max-width="1200"
     tile>
-  <v-card-title class="headline font-weight-bold blue-grey hite--text">
+  <v-card-title  class="headline font-weight-bold blue-grey hite--text">
       PROFILE
     </v-card-title>
 
     <v-img
-      height="310"
+      height="310" 
+      
       src="https://storage.googleapis.com/proudcity/deleontx/uploads/2016/12/preview-wattpad-cover-maker-thumbnail.jpg"
     >
      <v-col
@@ -32,7 +34,7 @@
              rounded
             size="200"
             tile >
-            <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
+            <v-img rounded src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
           </v-avatar>
           <v-list-item
             color="rgba(100, 0, 50, .4)"
@@ -61,7 +63,7 @@
             label="Full Name"
             outlined></v-text-field>
             <v-text-field
-            value="1998/11/28"
+            value="1998-11-28"
             label="Birth Date"
             outlined></v-text-field>
              <v-text-field
@@ -75,6 +77,10 @@
             <v-text-field
             value="Australia"
             label="Country"
+            outlined></v-text-field>
+            <v-text-field
+            value="42011"
+            label="ZIP code"
             outlined></v-text-field>
              <v-text-field
             value="160/2,1st Lane, Australia."
