@@ -1,4 +1,5 @@
 import Vue from "vue";
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VueRouter from "vue-router";
@@ -30,6 +31,8 @@ import AddBook from "./views/AddBook";
 Vue.use(VueRouter);
 
 import "./scss/main.scss";
+
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 

@@ -1,9 +1,20 @@
 <template>
-  <div class="block latestPostBlock">
-    <v-container>
-      <h2 class="text-center">Book Request</h2>
+  <div>
+    <div class="staticHero">
+      <v-img max-height="150" src="../assets/images/ggg.jpg">
+        <v-row align="end" class="lightbox white--text pa-2 fill-height">
+          <v-col>
+            <v-container>
+              <div class="headline">Book Request</div>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-img>
+    </div>
+    <div class="block">
       <div class="descriptionCard">
-        <v-card class="mx-auto lg" color="#E0E0E0" max-width="500">
+        <v-card class="mx-auto lg" max-width="500">
+          <div id="bookreq">Request a Book</div>
           <v-spacer></v-spacer>
           <validation-observer ref="observer" v-slot="">
             <form style="padding:10px;">
@@ -17,6 +28,7 @@
                   :counter="100"
                   :error-messages="errors"
                   label="Name"
+                  id="name"
                   required
                 ></v-text-field>
               </validation-provider>
@@ -29,6 +41,7 @@
                   v-model="email"
                   :error-messages="errors"
                   label="E-mail"
+                  id="email"
                   required
                 ></v-text-field>
               </validation-provider>
@@ -41,6 +54,7 @@
                   v-model="address"
                   :error-messages="errors"
                   label="Your Address"
+                  id="address"
                   required
                 ></v-text-field>
               </validation-provider>
@@ -53,6 +67,7 @@
                   v-model="book"
                   :error-messages="errors"
                   label="Book name"
+                  id="book"
                   required
                 ></v-text-field>
               </validation-provider>
@@ -75,7 +90,7 @@
                 <v-dialog v-model="dialog" hide-overlay persistent width="300">
                   <v-card color="primary" dark>
                     <v-card-text>
-                      Please wait...
+                      Submitting, Please wait...
                       <v-progress-linear
                         indeterminate
                         color="white"
@@ -84,9 +99,28 @@
                     </v-card-text>
                   </v-card>
                 </v-dialog>
+                <v-snackbar v-model="snackbar">
+                  {{ text }}
+
+                  <template v-slot:action="{ attrs }">
+                    <v-btn
+                      color="pink"
+                      text
+                      v-bind="attrs"
+                      @click="snackbar = false"
+                    >
+                      Close
+                    </v-btn>
+                  </template>
+                </v-snackbar>
               </v-row>
             </form>
           </validation-observer>
+          <v-progress-linear
+            color="cyan darken-2"
+            rounded
+            value="100"
+          ></v-progress-linear>
         </v-card>
       </div>
       <br />
@@ -95,7 +129,7 @@
       <br />
       <br />
       <br />
-    </v-container>
+    </div>
   </div>
 </template>
 
@@ -140,6 +174,8 @@ export default {
     book: "",
     errors: null,
     dialog: false,
+    snackbar: false,
+    text: "Submitted",
   }),
 
   methods: {
@@ -155,17 +191,32 @@ export default {
     },
   },
   watch: {
-    dialog(val) {
-      this.$refs.observer.validate();
-      if (!this.errors) {
+    async dialog(val) {
+      const isValid = await this.$refs.observer.validate();
+      if (!isValid) {
+        this.dialog = false;
+        return;
+      } else {
+
         if (!val) return;
         setTimeout(() => (this.dialog = false), 4000);
-        setTimeout(() => this.$router.push({ path: "/bookrequest" }), 4000);
-      } else {
-        return false;
+        setTimeout(() => location.reload(),  4000);
+        setTimeout(() => (this.snackbar = true), 4000)
       }
-      //this.$router.push("/login");
+      //this.snackbar = true;
     },
   },
 };
 </script>
+<style>
+#bookreq {
+  height: 45px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  margin: -20px -11px 10px -11px;
+}
+</style>
