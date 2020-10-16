@@ -1,7 +1,7 @@
 <template>
   <v-content>
     <div class="staticHero">
-      <v-img max-height="150" src="../assets/images/ggg.jpg">
+      <v-img max-height="150" src="../assets/images/ded.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
           <v-col>
             <v-container>
@@ -17,7 +17,7 @@
       </v-img>
     </div>
     <br />
-    <v-card style="max-width: 75%" class="text-center" border-variant="info">
+    <v-card :elevation="10" style="max-width: 75%" class="text-center" border-variant="info">
       <v-card-title
         class="headline font-weight-regular white--text"
         style="background-image: linear-gradient(79deg, #1dcce0, teal)"

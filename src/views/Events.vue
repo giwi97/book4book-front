@@ -5,7 +5,7 @@
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
           <v-col>
             <v-container>
-              <h1 style="font-size:35px;" class="text-center font-weight-regular">Up Coming Event</h1>
+              <h1 style="font-size:40px;" class="text-center font-weight-regular">Events</h1>
             </v-container>
           </v-col>
         </v-row>
