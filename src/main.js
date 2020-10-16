@@ -29,11 +29,10 @@ import AddBook from "./views/AddBook";
 
 
 Vue.use(VueRouter);
-Vue.use(BootstrapVue);
 
 import "./scss/main.scss";
 
-
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
