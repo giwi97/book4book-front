@@ -1,13 +1,19 @@
 <template>
   <v-content>
-    <div class="block latestPostBlock">
-    <h2 class="text-center">Groups</h2>
-    
-    <br>
-    <p class="text-center"> These groups are provided to allow you you to exchange thoughts, ideas and opinions on topics that are of interest to you. Please do not use the group discussions boards to promote other commercial websites. This is a friendly site! Let's keep it that way.</p>
+    <div class="staticHero">
+      <v-img max-height="150" src="../assets/images/ggg.jpg">
+        <v-row align="end" class="lightbox white--text pa-2 fill-height">
+          <v-col>
+            <v-container>
+              <div class="headline">Groups</div>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-img>
+    </div>
 
     <Topics />
-    </div>
+    
   </v-content>
 </template>
 

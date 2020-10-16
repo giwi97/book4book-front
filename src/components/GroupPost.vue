@@ -14,7 +14,7 @@
           <v-list-item-content>
             <v-list-item-title>Evan You</v-list-item-title>
           </v-list-item-content>
-          <div class="text-right">02/10/2020</div>
+         
         </v-row>
         <p class="subtitle-2 font-weight-bold">Subject : Introduction</p>
         <p class="subtitle-2 font-weight-bold">Description :</p>

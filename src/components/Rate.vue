@@ -1,10 +1,11 @@
 <template>
   <v-card
     class="mx-auto elevation-6"
-    color="teal lighten-2"
+    color="white"
     
     style="max-width: 1275px"
   >
+  <div id="addBook">Add Your Review</div>
     <v-row justify="space-between">
       <v-col cols="12" sm="6">
         <v-card-title>
@@ -15,7 +16,7 @@
         <v-card-actions class="pa-4">
           <v-rating
             v-model="rating"
-            background-color="white"
+            background-color="black"
             color="yellow accent-4"
             dense
             half-increments
@@ -81,3 +82,15 @@ export default {
   }),
 };
 </script>
+<style>
+#addBook {
+  height: 45px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  margin: -20px -11px 10px -11px;
+}
+</style>

@@ -16,7 +16,7 @@
               <v-list-item-content>
                 <v-list-item-title>You</v-list-item-title>
               </v-list-item-content>
-              <div class="text-right">02/10/2020</div>
+              
             </v-row>
             <v-card-title primary-title>
               <div>
@@ -87,10 +87,14 @@
       <v-app>
         <v-content>
           <v-container>
-            <v-card class="mx-auto teal lighten-4" max-width="650">
+            <div style="margin-left: 8%; width: 92%; padding-top: 10px">
+            <v-card class="mx-auto">
               <v-form ref="form" v-model="valid" lazy-validation>
-                <p class="subtitle-1 font-weight-bold">Add Your Post</p>
+                
+                <div id="addBook">Add Your Post</div>
+                 
                 <v-text-field
+                class="mx-auto"
                   :rules="[(v) => !!v || 'Subject is required']"
                   v-model="task"
                   label="Subject"
@@ -99,8 +103,7 @@
                 </v-text-field>
                 <v-textarea
                   :rules="[(v) => !!v || 'Description is required']"
-                  background-color="teal lighten-5"
-                  auto-grow
+                   auto-grow
                   rows="4"
                   row-height="30"
                   class="pa-3"
@@ -109,11 +112,15 @@
                   required
                 >
                 </v-textarea>
-                <v-row align="center" justify="center">
+                
+                <v-row align="end" justify="end">
+                  <div style="float: right; margin: 0px 39px 20px 0px">
                   <v-btn v-if="edit != true" color="normal" @click="reset">
                     clear
                   </v-btn>
+
                   <v-btn
+                     id="add"
                     :disabled="!valid"
                     v-if="edit != true"
                     color="primary"
@@ -123,6 +130,7 @@
                   </v-btn>
 
                   <v-btn
+                  id="edit"
                     v-if="edit == true"
                     color="success"
                     @click="updateTask($event, validate)"
@@ -130,15 +138,20 @@
                     Update
                   </v-btn>
                   <v-btn
+                  id="delete"
                     v-if="edit == true"
                     color="secondary"
                     @click="cancelTask($event)"
                   >
                     Cancel
                   </v-btn>
+                  </div>
+                  
                 </v-row>
+                 
               </v-form>
             </v-card>
+            </div>
           </v-container>
         </v-content>
       </v-app>
@@ -222,3 +235,22 @@ export default {
   },
 };
 </script>
+
+<style>
+#addBook {
+  height: 45px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  margin: -20px -11px 10px -11px;
+}
+#add,
+#edit,
+#delete {
+  margin-left: 10px;
+}
+
+</style>
