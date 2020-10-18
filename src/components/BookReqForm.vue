@@ -199,10 +199,10 @@ export default {
       } else {
         if (!val) return;
         setTimeout(() => (this.dialog = false), 4000);
-        setTimeout(() => location.reload(), 4000);
-        setTimeout(() => (this.snackbar = true), 4000);
+        setTimeout(() => location.reload(), 5000);
+        
       }
-      //this.snackbar = true;
+      setTimeout(() => (this.snackbar = true), 3000);
     },
   },
 };
