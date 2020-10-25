@@ -23,10 +23,12 @@ npm run serve or yarn run serve
 
 ### Screenshots
 
-# Desktop view
+
+
+### Desktop view
 
 ![Alt text](screencaptures/large.png?raw=true "Desktop view")
 
-# Mobile view
+### Mobile view
 
 ![Alt text](screencaptures/small.jpg?raw=true "Mobile view")
