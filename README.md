@@ -1,24 +1,32 @@
-# book4book
+## Book4Book - Book Exchanging Platform
+
+## Scenario
+
+Redesigned and developed the front-end of book exchanging platform Book4book for better user experience.
+
+```
+Current website - http://www.book4book.lk/
+Redesigned website - https://book4bk.herokuapp.com/
+```
+
 
 ## Project setup
+
+Follow the instructions below.
+
 ```
-npm install
+npm install or yarn install
+```
+```
+npm run serve or yarn run serve
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Screenshots
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Desktop view
 
-### Lints and fixes files
-```
-npm run lint
-```
+![Alt text](screencaptures\large.png?raw=true "Desktop view")
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Mobile view
+
+![Alt text](screencaptures\small.jpg?raw=true "Mobile view")
